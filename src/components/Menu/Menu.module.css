@@ -1,0 +1,28 @@
+.Menu {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--verde-escuro);
+    padding: 1em;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;    
+}
+
+.Menu section {
+    display: flex;
+    justify-content: space-between;    
+    width: 90%;
+}
+
+.Menu ul {
+    display: flex;
+    align-items: center;
+}
+
+.labmaker {
+    background-color: var(--vermelho);
+    padding: 0.8em;
+    border-radius: 25px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+

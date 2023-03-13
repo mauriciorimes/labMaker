@@ -1,0 +1,31 @@
+.rodape {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--verde-escuro);
+    padding: 1em;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.rodape ul {
+    display: flex;
+    align-items: center;
+}
+
+.rodape div {
+    display: flex;
+    align-items: center;
+}
+
+.rodape a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.location {
+    color: var(--vermelho);
+}
+
+.linkedin {
+    color: #0e76a8;
+}
