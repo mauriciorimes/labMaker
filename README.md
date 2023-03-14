@@ -1,4 +1,4 @@
-## Site do LabMaker do Instituto Federal Fluminense, tema do meu TCC
+## Site do LabMaker do Instituto Federal Fluminense, tema do meu TCC.
 
 --> Tecnologias usadas: HTML5, CSS3, JavaScript, React.
 

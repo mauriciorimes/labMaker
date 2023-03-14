@@ -7,6 +7,7 @@ import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 
 
+
 export default function Menu() {
     return (
         <nav className={styles.Menu}>
@@ -40,7 +41,7 @@ export default function Menu() {
                     <ul>
                         <li><LocalLibraryIcon /></li>
                         <li>Práticas Pedagógicas</li>
-                    </ul>                    
+                    </ul>
                 </MenuLink>
             </section>
         </nav>

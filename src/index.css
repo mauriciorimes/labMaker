@@ -6,6 +6,13 @@
 	--azul-linkedin: #0e76a8;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -50,10 +57,6 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
-
-* {
-	font-family: 'Montserrat', sans-serif;
 }
 
 body {

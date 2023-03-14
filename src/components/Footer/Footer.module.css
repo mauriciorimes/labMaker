@@ -5,6 +5,8 @@
     padding: 1em;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    /* width: 100%; */
 }
 
 .rodape ul {
@@ -28,4 +30,13 @@
 
 .linkedin {
     color: #0e76a8;
+}
+
+@media screen and (max-width: 750px) {
+    .rodape {
+        flex-direction: column;        
+    }
+    .rodape ul {        
+        padding: 5px 0;
+    }     
 }
