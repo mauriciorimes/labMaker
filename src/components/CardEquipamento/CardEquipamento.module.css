@@ -1,0 +1,25 @@
+.cards {
+    display: flex;    
+    width: 60%;
+    border-radius: 20px;
+    padding: 24px 24px;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
+    margin: 1em 0;
+    background-color: var(--verde-medio);
+    box-sizing: border-box;
+}
+
+.cards img {
+    width: 100px;
+    border: 6px solid var(--verde-escuro);
+}
+
+.cards div {
+    margin-left: 1em;
+}
+
+.cards p {
+    margin-top: 0.5em;
+}
+
+

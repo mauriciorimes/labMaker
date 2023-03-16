@@ -29,12 +29,12 @@ export default function Formulario({ agendamentoEfetuado }) {
         "20:40",
         "21:30",
         "22:20"
-    ]
+    ] 
 
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');
-    const [instituicao, setInstituicao] = useState('');
+    const [instituicao, setInstituicao] = useState('');    
     const [data, setData] = useState('');
     const [horaInicial, setHoraInicial] = useState('');
     const [horaFinal, setHoraFinal] = useState('');
@@ -53,7 +53,7 @@ export default function Formulario({ agendamentoEfetuado }) {
             nome,
             email,
             telefone,
-            instituicao,
+            instituicao,            
             data,
             horaInicial,
             horaFinal
@@ -104,10 +104,11 @@ export default function Formulario({ agendamentoEfetuado }) {
                 <CampoTexto
                     label="Instituição de origem"
                     placeholder="Digite onde você estuda"
-                    obrigatorio={true} valor={instituicao}
+                    obrigatorio={true} 
+                    valor={instituicao}
                     minlength="10"
                     aoAlterado={valor => setInstituicao(valor)}
-                />
+                />                
                 <CampoTexto
                     label="Data"
                     type="date"

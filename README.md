@@ -3,4 +3,5 @@
 --> Tecnologias usadas: HTML5, CSS3, JavaScript, React.
 
 O que é o Laboratório Maker:
-Será onde alunos e servidores, poderão colocar toda a teoria aprendida em pratica, poderá ser construído robôs, aplicativos, brinquedos interativos e muito mais! Toda sua imaginação poderá ser literalmente impressa em impressoras 3D!
+É um laboratório voltado ao desenvolvimento de projetos acadêmicos em geral. Ele terá espaços para trabalho colaborativo, ferramentas diversas, impressoras 3D, scanner 3D e cortadora à laser, além de outros materiais que poderão ser utilizados nas atividades. 
+

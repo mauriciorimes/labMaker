@@ -4,6 +4,11 @@
     font-weight: bold;      
 }
 
+.linkDestacado {
+    text-decoration: underline;
+    text-decoration-color: var(--vermelho);    
+}
+
 .link:hover {
     color: var(--vermelho);
 }
