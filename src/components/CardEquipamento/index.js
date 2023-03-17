@@ -5,9 +5,9 @@ export default function CardEquipamento({ label, quantidade, imagem, descricao }
         <section className={`${styles.cards}`}>
             <img src={imagem} alt={label} />
             <div>
-                <label> Nome: {label} </label>
+                <label> {label} </label>
                 <p> Quantidade: {quantidade} </p>                
-                <p className={styles.descricao}> Descrição: {descricao} </p>                               
+                <p className={styles.descricao}> {descricao} </p>                               
             </div>
         </section>
     )

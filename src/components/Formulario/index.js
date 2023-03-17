@@ -3,7 +3,8 @@ import Botao from '../Botao';
 import CampoHorario from '../CampoHorario';
 import CampoTexto from '../CampoTexto';
 import styles from './Formulario.module.css';
-import TelefoneBrasileiroInput from "react-telefone-brasileiro";
+// import TelefoneBrasileiroInput from "react-telefone-brasileiro";
+import { IMaskInput } from "react-imask";
 
 export default function Formulario({ agendamentoEfetuado }) {
 
@@ -29,12 +30,12 @@ export default function Formulario({ agendamentoEfetuado }) {
         "20:40",
         "21:30",
         "22:20"
-    ] 
+    ]
 
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');
-    const [instituicao, setInstituicao] = useState('');    
+    const [instituicao, setInstituicao] = useState('');
     const [data, setData] = useState('');
     const [horaInicial, setHoraInicial] = useState('');
     const [horaFinal, setHoraFinal] = useState('');
@@ -53,7 +54,7 @@ export default function Formulario({ agendamentoEfetuado }) {
             nome,
             email,
             telefone,
-            instituicao,            
+            instituicao,
             data,
             horaInicial,
             horaFinal
@@ -73,7 +74,7 @@ export default function Formulario({ agendamentoEfetuado }) {
                     obrigatorio={true}
                     minlength="8"
                     valor={nome}
-                    aoAlterado={valor => setNome(valor)}                                      
+                    aoAlterado={valor => setNome(valor)}
                 />
                 <CampoTexto
                     label="Email"
@@ -84,14 +85,23 @@ export default function Formulario({ agendamentoEfetuado }) {
                     valor={email}
                     aoAlterado={valor => setEmail(valor)}
                 />
+                <label htmlFor="telefone"> Telefone </label>
+                <IMaskInput
+                    mask="(00)00000-0000"
+                    className={styles.telefone}
+                    placeholder="Digite o seu telefone"
+                    required
+                    valor={telefone}
+                    onChange={(e) => setTelefone(e.target.value)}
+                />
                 {/* <CampoTexto
                     label="Telefone"
                     type="tel"
                     placeholder="Digite seu telefone"
                     obrigatorio={true} valor={telefone}
                     aoAlterado={valor => setTelefone(valor)}
-                /> */}  
-                <label for="telefone"> Telefone </label>              
+                />  */}
+                {/* <label htmlFor="telefone"> Telefone </label>              
                 <TelefoneBrasileiroInput                    
                     className={styles.telefone}
                     placeholder="Digite seu telefone"
@@ -99,16 +109,16 @@ export default function Formulario({ agendamentoEfetuado }) {
                     required
                     value={telefone}
                     onChange={(e) => setTelefone(e.target.value)}
-                    temDDD
-                />                
+                    temDDD                    
+                />                 */}
                 <CampoTexto
                     label="Instituição de origem"
                     placeholder="Digite onde você estuda"
-                    obrigatorio={true} 
+                    obrigatorio={true}
                     valor={instituicao}
                     minlength="10"
                     aoAlterado={valor => setInstituicao(valor)}
-                />                
+                />
                 <CampoTexto
                     label="Data"
                     type="date"

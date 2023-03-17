@@ -21,7 +21,7 @@ export default function Equipamentos() {
                     conectividade Bluetooth, um alto-falante, giroscópio de 6 eixos e uma bateria recarregável."                    
             />
             <CardEquipamento             
-                label="Notebook Dell"
+                label="Notebook Lenovo"
                 quantidade="7" 
                 imagem={notebook}
                 descricao="O primeiro PC dobrável do mundo fecha como um livro ou se abre completamente

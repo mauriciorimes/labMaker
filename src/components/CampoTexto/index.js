@@ -8,7 +8,7 @@ export default function CampoTexto({ label, placeholder, type, obrigatorio, minl
 
     return (
         <div className={styles.campoTexto}>
-            <label for={label}> {label} </label>
+            <label htmlFor={label}> {label} </label>
             <input
                 onChange={aoDigitado}
                 value={valor}                
@@ -16,7 +16,7 @@ export default function CampoTexto({ label, placeholder, type, obrigatorio, minl
                 required={obrigatorio}
                 id={label}
                 type={type} 
-                minlength={minlength}                                            
+                minLength={minlength}                                            
             />
         </div>
     )
