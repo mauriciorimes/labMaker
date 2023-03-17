@@ -3,7 +3,6 @@ import Botao from '../Botao';
 import CampoHorario from '../CampoHorario';
 import CampoTexto from '../CampoTexto';
 import styles from './Formulario.module.css';
-// import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 import { IMaskInput } from "react-imask";
 
 export default function Formulario({ agendamentoEfetuado }) {
@@ -100,17 +99,7 @@ export default function Formulario({ agendamentoEfetuado }) {
                     placeholder="Digite seu telefone"
                     obrigatorio={true} valor={telefone}
                     aoAlterado={valor => setTelefone(valor)}
-                />  */}
-                {/* <label htmlFor="telefone"> Telefone </label>              
-                <TelefoneBrasileiroInput                    
-                    className={styles.telefone}
-                    placeholder="Digite seu telefone"
-                    id="telefone"
-                    required
-                    value={telefone}
-                    onChange={(e) => setTelefone(e.target.value)}
-                    temDDD                    
-                />                 */}
+                />  */}                
                 <CampoTexto
                     label="Instituição de origem"
                     placeholder="Digite onde você estuda"
