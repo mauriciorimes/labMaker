@@ -1,0 +1,29 @@
+.CardInicio { 
+    display: flex;   
+    flex-direction: column;    
+    justify-content: space-around;
+    width: 350px;
+    min-width: 350px;
+
+    height: auto;
+    box-sizing: border-box;
+}
+
+.CardInicio img {
+    width: auto;
+    height: 300px;    
+    
+    
+}
+
+.CardInicio h2 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.CardInicio p {
+    text-align: center;
+}
