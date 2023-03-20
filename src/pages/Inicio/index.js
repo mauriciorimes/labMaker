@@ -4,8 +4,6 @@ import pessoas from '../../image/inicio/pessoas.png';
 import robo from '../../image/inicio/robo.png';
 import seguro from '../../image/inicio/seguro.png';
 
-
-
 export default function Inicio() {
     return (
         <main className={styles.container}>
