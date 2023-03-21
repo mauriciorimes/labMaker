@@ -3,11 +3,20 @@ import Botao from '../Botao';
 import CampoHorario from '../CampoHorario';
 import CampoTexto from '../CampoTexto';
 import styles from './Formulario.module.css';
-import { IMaskInput } from "react-imask";
+// import { IMaskInput } from "react-imask";
 
 export default function Formulario({ agendamentoEfetuado }) {
 
+    const maskPhone = (value) => {
+        return value
+            .replace(/\D/g, "")
+            .replace(/(\d{2})(\d)/, "($1) $2")
+            .replace(/(\d{5})(\d)/, "$1-$2")
+            .replace(/(-\d{4})(\d+?)$/, "$1");
+    }
+
     const horarios = [
+        "Escolha um horario",
         "07:00",
         "07:50",
         "08:40",
@@ -45,20 +54,30 @@ export default function Formulario({ agendamentoEfetuado }) {
         setTelefone('');
         setInstituicao('');
         setData('');
+        setHoraInicial('');
+        setHoraFinal('');
     }
 
     const aoSalvar = (e) => {
         e.preventDefault();
-        agendamentoEfetuado({
-            nome,
-            email,
-            telefone,
-            instituicao,
-            data,
-            horaInicial,
-            horaFinal
-        })
-        limpaCampos();
+        const horaInicialNumero = Number(horaInicial.replace(/[^0-9]/g, ''))
+        const horaFinalNumero = Number(horaFinal.replace(/[^0-9]/g, ''))
+
+        if (horaInicialNumero === horaFinalNumero || horaInicialNumero > horaFinalNumero) {
+            alert('Horario final nao pode ser igual ou menor que Horario inicial')
+        } else {
+            agendamentoEfetuado({
+                nome,
+                email,
+                telefone,
+                instituicao,
+                data,
+                horaInicial,
+                horaFinal
+            })
+            limpaCampos();
+            alert(`Agendamento realizado com sucesso!`)
+        }        
     }
 
     return (
@@ -84,22 +103,25 @@ export default function Formulario({ agendamentoEfetuado }) {
                     valor={email}
                     aoAlterado={valor => setEmail(valor)}
                 />
-                <label htmlFor="telefone"> Telefone </label>
-                <IMaskInput
+                {/* <label htmlFor="telefone"> Telefone </label> */}
+                {/* <IMaskInput
                     mask="(00)00000-0000"
                     className={styles.telefone}
                     placeholder="Digite o seu telefone"
                     required
                     valor={telefone}
-                    onChange={(e) => setTelefone(e.target.value)}
-                />
-                {/* <CampoTexto
+                    onChange={(e) => setTelefone(e.target.value)}                    
+                /> */}
+                <label htmlFor="telefone"> Telefone </label>
+                <input
+                    className={styles.telefone}
                     label="Telefone"
                     type="tel"
                     placeholder="Digite seu telefone"
-                    obrigatorio={true} valor={telefone}
-                    aoAlterado={valor => setTelefone(valor)}
-                />  */}                
+                    required
+                    value={telefone}
+                    onChange={(e) => setTelefone(maskPhone(e.target.value))}
+                />
                 <CampoTexto
                     label="Instituição de origem"
                     placeholder="Digite onde você estuda"

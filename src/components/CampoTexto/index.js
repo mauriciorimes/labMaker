@@ -16,7 +16,7 @@ export default function CampoTexto({ label, placeholder, type, obrigatorio, minl
                 required={obrigatorio}
                 id={label}
                 type={type} 
-                minLength={minlength}                                            
+                minLength={minlength}                                                                    
             />
         </div>
     )
