@@ -46,6 +46,7 @@ export default function Formulario({ agendamentoEfetuado }) {
             })
             limpaCampos();
             alert(`Agendamento realizado com sucesso!`)
+            window.scrollTo(0, 0);
         }        
     }
 

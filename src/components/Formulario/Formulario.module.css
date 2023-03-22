@@ -6,8 +6,7 @@
     font-family: 'Montserrat', sans-serif;    
 }
 
-.formulario form {
-    /* max-width: 80%; */
+.formulario form {    
     background-color: var(--verde-medio);
     border-radius: 20px;
     padding: 36px 64px;
@@ -35,4 +34,10 @@
     display: block;
     margin-bottom: 8px;
     font-size: 24px;
+}
+
+@media screen and (max-width: 600px) {
+    .formulario form {
+        padding: 36px 24px;
+    }  
 }
