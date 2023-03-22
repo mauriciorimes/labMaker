@@ -3,42 +3,10 @@ import Botao from '../Botao';
 import CampoHorario from '../CampoHorario';
 import CampoTexto from '../CampoTexto';
 import styles from './Formulario.module.css';
-// import { IMaskInput } from "react-imask";
+import { maskPhone } from '../Formulario/utils/Mascaras.js';
+import { horarios } from '../Formulario/utils/Horarios.js';
 
-export default function Formulario({ agendamentoEfetuado }) {
-
-    const maskPhone = (value) => {
-        return value
-            .replace(/\D/g, "")
-            .replace(/(\d{2})(\d)/, "($1) $2")
-            .replace(/(\d{5})(\d)/, "$1-$2")
-            .replace(/(-\d{4})(\d+?)$/, "$1");
-    }
-
-    const horarios = [
-        "Escolha um horario",
-        "07:00",
-        "07:50",
-        "08:40",
-        "09:30",
-        "09:50",
-        "10:40",
-        "11:30",
-        "12:20",
-        "13:10",
-        "14:00",
-        "14:50",
-        "15:20",
-        "16:10",
-        "17:00",
-        "17:50",
-        "18:00",
-        "18:50",
-        "19:40",
-        "20:40",
-        "21:30",
-        "22:20"
-    ]
+export default function Formulario({ agendamentoEfetuado }) {    
 
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
@@ -64,7 +32,8 @@ export default function Formulario({ agendamentoEfetuado }) {
         const horaFinalNumero = Number(horaFinal.replace(/[^0-9]/g, ''))
 
         if (horaInicialNumero === horaFinalNumero || horaInicialNumero > horaFinalNumero) {
-            alert('Horario final nao pode ser igual ou menor que Horario inicial')
+            alert('Horário final não pode ser igual ou menor que horário inicial')   
+            
         } else {
             agendamentoEfetuado({
                 nome,
@@ -81,7 +50,7 @@ export default function Formulario({ agendamentoEfetuado }) {
     }
 
     return (
-        <section className={styles.formulario}>
+        <section className={styles.formulario}>            
             <form onSubmit={aoSalvar}>
                 <h2> Preencha os dados para completar seu agendamento</h2>
 
@@ -102,16 +71,7 @@ export default function Formulario({ agendamentoEfetuado }) {
                     minlength="12"
                     valor={email}
                     aoAlterado={valor => setEmail(valor)}
-                />
-                {/* <label htmlFor="telefone"> Telefone </label> */}
-                {/* <IMaskInput
-                    mask="(00)00000-0000"
-                    className={styles.telefone}
-                    placeholder="Digite o seu telefone"
-                    required
-                    valor={telefone}
-                    onChange={(e) => setTelefone(e.target.value)}                    
-                /> */}
+                />                
                 <label htmlFor="telefone"> Telefone </label>
                 <input
                     className={styles.telefone}
@@ -154,7 +114,7 @@ export default function Formulario({ agendamentoEfetuado }) {
 
                 <Botao>
                     Agendar
-                </Botao>
+                </Botao>                
             </form>
         </section>
     )

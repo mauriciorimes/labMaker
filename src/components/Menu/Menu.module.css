@@ -9,6 +9,12 @@
     box-sizing: border-box;
 }
 
+.link {
+    text-decoration: none;
+    color: #000000;    
+    font-weight: bold;     
+}
+
 .Menu section {
     display: flex;    
     justify-content: space-between;    
@@ -25,7 +31,11 @@
     padding: 0.8em;
     border-radius: 25px;
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;    
+    font-family: 'Montserrat', sans-serif;      
+}
+
+.labmaker:hover {
+    background-color: var(--verde-claro);
 }
 
 @media screen and (max-width: 850px) {
