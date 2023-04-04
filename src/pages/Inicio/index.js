@@ -32,7 +32,7 @@ export default function Inicio() {
                     imagem={seguro}
                     alt="Símbolo de segurança"
                     titulo="Ambiente seguro"
-                    descricao="Todas visitas sao supervisionadas por instrutores, para auxiliar nas atividades."                
+                    descricao="Todas visitas são supervisionadas por instrutores, para auxiliar nas atividades."                
                 />
             </section>
                    

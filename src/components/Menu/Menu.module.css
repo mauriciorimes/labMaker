@@ -27,7 +27,7 @@
 }
 
 .labmaker {
-    background-color: var(--vermelho);
+    background-color: var(--vermelho-mapa);
     padding: 0.8em;
     border-radius: 25px;
     font-weight: bold;

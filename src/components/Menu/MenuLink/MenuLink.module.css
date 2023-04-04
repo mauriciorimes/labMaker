@@ -6,9 +6,9 @@
 
 .linkDestacado {
     text-decoration: underline;
-    text-decoration-color: var(--vermelho);    
+    text-decoration-color: var(--vermelho-mapa);    
 }
 
 .link:hover {
-    color: var(--vermelho);
+    color: var(--vermelho-mapa);
 }

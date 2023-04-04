@@ -10,7 +10,7 @@ export default function Footer() {
             <address>
                 <ul>
                     <li><LocationOnIcon className={styles.location} /></li>
-                    <li>Rodovia BR 356, Km3, Cidade Nova - Itaperuna, RJ - CEP 28.300-000</li>
+                    <a href='https://goo.gl/maps/KbYmiT8W99vJCpBQ8' target="_blank" rel="noreferrer"><li><address>Rodovia BR 356, Km3, Cidade Nova - Itaperuna, RJ - CEP 28.300-000</address></li></a>
                 </ul>
                 <ul>
                     <li><ApartmentIcon /></li>
@@ -18,7 +18,7 @@ export default function Footer() {
                 </ul>
                 <ul>
                     <li><CallIcon /></li>
-                    <li>Telefone: (22) 3826-2300 | 98826-0795</li>
+                    <li><address> Telefone: (22) 3826-2300 | 98826-0795 </address></li>
                 </ul>                
             </address>
             <a href='https://www.linkedin.com/in/maur%C3%ADcio-rimes-4579701a7/' target="_blank" rel="noreferrer">
