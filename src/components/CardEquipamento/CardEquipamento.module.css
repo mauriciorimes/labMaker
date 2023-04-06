@@ -2,7 +2,7 @@
     display: flex;    
     width: 40%;
     border-radius: 20px;
-    padding: 24px 24px;
+    padding: 24px;
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
     margin: 1em 0;
     background-color: var(--verde-medio);

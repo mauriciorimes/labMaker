@@ -1,0 +1,27 @@
+[
+    {
+      "titulo": "Sede do Instuto Federal Fluminense",      
+      "imagem": "https://portal1.iff.edu.br/nossos-campi/itaperuna/noticias/fotos/IFF_Itaperuna.JPG",
+      "id": "1",
+      "tag": "Campus IFF Fluminense"
+    },
+    {
+      "titulo": "Parque Academico",      
+      "imagem": "https://portal1.iff.edu.br/nossos-campi/itaperuna/noticias/iff-itaperuna-da-inicio-a-implantacao-de-novo-laboratorio-para-os-cursos-de-mecanica-e-quimica/dsc_7916-copia.jpg/@@images/2cde15c5-1dae-4854-b866-952e37a624c5.jpeg",
+      "id": "2",
+      "tag": "Campus IFF Fluminense"
+    },
+    {
+      "titulo": "Impressora 3D",      
+      "imagem": "https://a-static.mlcdn.com.br/800x560/impressora-3d-creality-ender-3-velocidade-maxima-de-180mm-s-bico-de-0-4mm-estrutura-em-aluminio-anodizado-1201020134/kabum/157630/4cfea5f580aeb04366276adb96d93978.jpeg",
+      "id": "3",
+      "tag": "Equipamentos"
+    },
+    {
+      "titulo": "Notebook",      
+      "imagem": "https://m.media-amazon.com/images/I/51WG6cmUhyL._AC_SY450_.jpg",
+      "id": "4",
+      "tag": "Equipamentos"
+    }
+    
+  ]

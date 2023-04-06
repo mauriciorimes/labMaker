@@ -1,9 +1,9 @@
-import CardEquipamento from '../../components/CardEquipamento';
+import CardEquipamento from 'components/CardEquipamento';
 import styles from './Equipamentos.module.css';
-import impressora from '../../image/equipamentos/3d-printing.png';
-import scanner from '../../image/equipamentos/3d-scanner.png';
-import lego from '../../image/equipamentos/blocks.png';
-import notebook from '../../image/equipamentos/laptop.png';
+import impressora from 'image/equipamentos/3d-printing.png';
+import scanner from 'image/equipamentos/3d-scanner.png';
+import lego from 'image/equipamentos/blocks.png';
+import notebook from 'image/equipamentos/laptop.png';
 
 export default function Equipamentos() {
     return (

@@ -1,4 +1,4 @@
-import Formulario from '../../components/Formulario';
+import Formulario from 'components/Formulario';
 import styles from './Agendamento.module.css';
 
 export default function Agendamento() {    

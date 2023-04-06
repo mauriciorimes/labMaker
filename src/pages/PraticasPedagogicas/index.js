@@ -1,6 +1,6 @@
-import CardPraticasPedagogicas from '../../components/CardPraticasPedagogicas';
+import CardPraticasPedagogicas from 'components/CardPraticasPedagogicas';
 import styles from './PraticasPedagogicas.module.css';
-import conhecimento from '../../image/praticas/conhecimento.png'
+import conhecimento from 'image/praticas/conhecimento.png'
 
 export default function PraticasPedagogicas() {
     return(

@@ -1,18 +1,18 @@
 import styles from './Inicio.module.css';
-import CardInicio from '../../components/CardInicio';
-import pessoas from '../../image/inicio/pessoas.png';
-import robo from '../../image/inicio/robo.png';
-import seguro from '../../image/inicio/seguro.png';
+import CardInicio from 'components/CardInicio';
+import pessoas from 'image/inicio/pessoas.png';
+import robo from 'image/inicio/robo.png';
+import seguro from 'image/inicio/seguro.png';
 
 export default function Inicio() {
     return (
-        <main className={styles.container}>
+        <main className={styles.container}>            
             <h1> Laboratório Maker do Instituto Federal Fluminense - Campus Itaperuna </h1>
 
             <article>                
                 É um laboratório voltado ao desenvolvimento de projetos acadêmicos em geral.
-                Ele terá espaços para trabalho colaborativo, ferramentas diversas, impressoras 3D,
-                scanner 3D e cortadora à laser, além de outros materiais que poderão ser utilizados nas atividades.
+                Ele terá espaços para trabalho colaborativo, ferramentas diversas, impressoras 3D e
+                scanner 3D, além de outros materiais que poderão ser utilizados nas atividades.
             </article>   
 
             <section>

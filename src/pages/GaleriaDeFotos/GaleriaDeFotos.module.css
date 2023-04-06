@@ -1,0 +1,12 @@
+.galeria ul {
+    display: flex;    
+    justify-content: center;
+    padding: 2em 0;
+}
+
+.galeria li {
+    display: flex;       
+    font-size: 28px;
+    font-weight: 300;   
+    align-items: center; 
+}
