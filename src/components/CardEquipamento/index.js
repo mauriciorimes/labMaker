@@ -7,7 +7,7 @@ export default function CardEquipamento({ label, quantidade, imagem, descricao }
             <div>
                 <label> {label} </label>
                 <p> Quantidade: {quantidade} </p>                
-                <p className={styles.descricao}> {descricao} </p>                               
+                <p className={styles.descricao}> {descricao} </p>                                                  
             </div>
         </section>
     )

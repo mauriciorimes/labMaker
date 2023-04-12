@@ -4,6 +4,7 @@ import impressora from 'image/equipamentos/3d-printing.png';
 import scanner from 'image/equipamentos/3d-scanner.png';
 import lego from 'image/equipamentos/blocks.png';
 import notebook from 'image/equipamentos/laptop.png';
+import cortadora from 'image/equipamentos/laser-cutting-machine.png';
 
 export default function Equipamentos() {
     return (
@@ -18,8 +19,15 @@ export default function Equipamentos() {
                 label="Scanner 3D"
                 quantidade="1"
                 imagem={scanner}
-                descricao="escaneia a forma espacial, estrutura e cor de um objeto para obter informações
+                descricao="Escaneia a forma espacial, estrutura e cor de um objeto para obter informações
                     sobre as coordenadas espaciais da superfície do objeto."                    
+            />
+            <CardEquipamento
+                label="Cortadora a laser"
+                quantidade="1"
+                imagem={cortadora}
+                descricao="é uma máquina que emprega um sistema de guias para mover uma cabeça, onde localiza o laser,
+                    o qual pode cortar materiais metálicos e outros tipos de materiais, como madeira ou couro"                    
             />
             <CardEquipamento
                 label="Lego Spike Prime"

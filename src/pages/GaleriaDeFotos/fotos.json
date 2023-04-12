@@ -6,7 +6,7 @@
       "tag": "Campus IFF Fluminense"
     },
     {
-      "titulo": "Parque Academico",      
+      "titulo": "Parque Acadêmico",      
       "imagem": "https://portal1.iff.edu.br/nossos-campi/itaperuna/noticias/iff-itaperuna-da-inicio-a-implantacao-de-novo-laboratorio-para-os-cursos-de-mecanica-e-quimica/dsc_7916-copia.jpg/@@images/2cde15c5-1dae-4854-b866-952e37a624c5.jpeg",
       "id": "2",
       "tag": "Campus IFF Fluminense"
@@ -22,6 +22,23 @@
       "imagem": "https://m.media-amazon.com/images/I/51WG6cmUhyL._AC_SY450_.jpg",
       "id": "4",
       "tag": "Equipamentos"
-    }
-    
+    },
+    {
+      "titulo": "Aula de Química",      
+      "imagem": "https://movinovacaonaeducacao.org.br/wp-content/uploads/2020/03/iff.jpg",
+      "id": "5",
+      "tag": "Aulas"
+    },
+    {
+      "titulo": "Cerimônia de formatura",      
+      "imagem": "https://portal1.iff.edu.br/nossos-campi/itaperuna/noticias/iff-itaperuna-realiza-cerimonias-de-formatura-de-cursos-tecnicos-e-de-nivel-superior/convite2018_2_info_eletro.png",
+      "id": "6",
+      "tag": "Eventos"
+    },
+    {
+      "titulo": "Novembro Negro",      
+      "imagem": "https://eventos.iff.edu.br/ckeditor_assets/pictures/850/content_WhatsApp_Image_2021-11-10_at_19.35.30_%281%29.jpeg",
+      "id": "7",
+      "tag": "Eventos"
+    }     
   ]

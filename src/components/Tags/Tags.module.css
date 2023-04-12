@@ -16,6 +16,7 @@
 
 .categorias {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     width: 60%;
 }
@@ -32,6 +33,25 @@
 .categorias li:hover {
     color: var(--vermelho-mapa);
 }
+
+@media screen and (max-width: 1150px) {
+    .categorias {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .categorias {
+        width: 100%;
+    }
+    .categorias li {
+        margin: 0.2em 0;        
+    }
+    .filtro li {
+        display: none;
+    }
+}
+
 
 
 
