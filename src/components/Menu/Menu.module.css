@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 
-.link {
+.Menu a {
     text-decoration: none;
     color: #000000;    
     font-weight: bold;     

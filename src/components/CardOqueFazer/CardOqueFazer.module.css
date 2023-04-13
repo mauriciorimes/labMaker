@@ -1,0 +1,28 @@
+.Fazer {
+    width: 200px;
+    height: 210px;
+    background-color: var(--verde-medio);
+    margin: 0.5em 0;
+}
+
+.Fazer ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em;
+    gap: 0.5em;
+}
+
+.Fazer p {
+    padding: 0.5em 1.5em;
+}
+
+.Fazer:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.025);
+    transition: 0.18s;
+
+    background-color: var(--verde-escuro);
+    color: var(--cinza-claro);
+}
