@@ -1,15 +1,15 @@
 import styles from './CampoTexto.module.css';
 
-export default function CampoTexto({ label, placeholder, type, obrigatorio, minlength, valor, aoAlterado }) {     
-
+function CampoTexto({ label, placeholder, type, obrigatorio, minlength, valor, aoAlterado })  {     
+    
     const aoDigitado = (e) => {
         aoAlterado(e.target.value)
-    }
-
+    } 
+    
     return (
         <div className={styles.campoTexto}>
             <label htmlFor={label}> {label} </label>
-            <input
+            <input                
                 onChange={aoDigitado}
                 value={valor}                
                 placeholder={placeholder}
@@ -21,3 +21,5 @@ export default function CampoTexto({ label, placeholder, type, obrigatorio, minl
         </div>
     )
 }
+
+export default CampoTexto
