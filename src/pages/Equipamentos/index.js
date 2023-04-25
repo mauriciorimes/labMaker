@@ -26,8 +26,7 @@ export default function Equipamentos() {
                 label="Cortadora a laser"
                 quantidade="1"
                 imagem={cortadora}
-                descricao="é uma máquina que emprega um sistema de guias para mover uma cabeça, onde localiza o laser,
-                    o qual pode cortar materiais metálicos e outros tipos de materiais, como madeira ou couro"                    
+                descricao="É uma máquina que utiliza laser para cortar ou gravar diferentes materiais, como MDF, acrílico e tecido."                    
             />
             <CardEquipamento
                 label="Lego Spike Prime"

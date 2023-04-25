@@ -37,8 +37,14 @@ const Formulario = () => {
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach((doc) => {
                 console.log(`Data: ${doc.data().data}`)
-                console.log(doc.data().horaInicial)      
-                            
+                console.log(doc.data().horaInicial)
+                console.log(doc.data().horaFinal);
+                
+                if (doc.data().horaInicial === null) {
+                    console.log('null');
+                }
+                
+                
             })
 
 
@@ -78,9 +84,6 @@ const Formulario = () => {
                 horaFinal
             })
             console.log(agend);
-
-
-
             limpaCampos();
             alert(`Agendamento realizado com sucesso!`)
             window.scrollTo(0, 0);
