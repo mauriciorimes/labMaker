@@ -5,8 +5,11 @@ import CampoTexto from '../CampoTexto';
 import styles from './Formulario.module.css';
 import { maskPhone } from '../Formulario/utils/Mascaras.js';
 import { horarios } from '../Formulario/utils/Horarios.js';
-import { collection, getDocs, addDoc } from 'firebase/firestore/lite';
+import { collection, getDocs, addDoc, query, where, ref } from 'firebase/firestore/lite';
 import { db } from 'db/firebase';
+import { dataCortada } from './utils/Data';
+import { horariosAux } from './utils/HorariosAux';
+
 
 const Formulario = () => {
 
@@ -19,20 +22,31 @@ const Formulario = () => {
     const [horaFinal, setHoraFinal] = useState('');
     const [agendamento, setAgendamento] = useState([]);
 
+    const [horario, setHorario] = useState(horarios)
+
     const useCollectionRef = collection(db, "agendamento")
 
     useEffect(() => {
         const obterAgendamentos = async () => {
-            const data = await getDocs(useCollectionRef)
-            //console.log(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
-            setAgendamento(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-        };        
-        
-        obterAgendamentos();
-    }, []);    
+            const dataBD = await getDocs(useCollectionRef)
+            const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+            setAgendamento(todosAgendamentos)
 
-    // O problema nao eh no useEffect
-    console.log('Teste de renderizacao');    
+            const q = query(collection(db, "agendamento"), where("data", "==", data));
+
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((doc) => {
+                console.log(`Data: ${doc.data().data}`)
+                console.log(doc.data().horaInicial)      
+                            
+            })
+
+
+        };
+        obterAgendamentos();
+    }, [data]);
+
+    console.log('Teste de renderizacao');
 
     const limpaCampos = () => {
         setNome('');
@@ -42,12 +56,12 @@ const Formulario = () => {
         setData('');
         setHoraInicial('');
         setHoraFinal('');
-    }    
+    }
 
     async function aoSalvar(e) {
         e.preventDefault();
         const horaInicialNumero = Number(horaInicial.replace(/[^0-9]/g, ''))
-        const horaFinalNumero = Number(horaFinal.replace(/[^0-9]/g, ''))        
+        const horaFinalNumero = Number(horaFinal.replace(/[^0-9]/g, ''))
 
         if (horaInicialNumero === horaFinalNumero || horaInicialNumero > horaFinalNumero) {
             alert('Horário final não pode ser igual ou menor que horário inicial')
@@ -63,11 +77,9 @@ const Formulario = () => {
                 horaInicial,
                 horaFinal
             })
-             console.log(agend);
-            // console.log(horarios);
-            // console.log(horaInicial);
-            // console.log(horarios.includes(horaInicial));
-            
+            console.log(agend);
+
+
 
             limpaCampos();
             alert(`Agendamento realizado com sucesso!`)
@@ -76,21 +88,7 @@ const Formulario = () => {
     }
 
     return (
-        <section className={styles.formulario}>
-            <ul>
-                {agendamento.map(agendamento => (
-                    <div>
-                        <li> {agendamento.nome} </li>
-                        <li> {agendamento.email} </li>
-                        <li> {agendamento.telefone} </li>
-                        <li> {agendamento.instituicao} </li>
-                        <li> {agendamento.data} </li>
-                        <li> {agendamento.horaInicial} </li>
-                        <li> {agendamento.horaFinal} </li>
-                    </div>
-
-                ))}
-            </ul>
+        <section className={styles.formulario}>            
             <form onSubmit={aoSalvar}>
                 <h2> Preencha os dados para completar seu agendamento</h2>
 
@@ -120,7 +118,7 @@ const Formulario = () => {
                     placeholder="Digite seu telefone"
                     required
                     value={telefone}
-                    onChange={(e) => setTelefone(maskPhone(e.target.value))}                    
+                    onChange={(e) => setTelefone(maskPhone(e.target.value))}
                 />
                 <CampoTexto
                     label="Instituição de origem"
@@ -137,17 +135,18 @@ const Formulario = () => {
                     obrigatorio={true}
                     valor={data}
                     aoAlterado={valor => setData(valor)}
+                    min={dataCortada}
                 />
 
                 <CampoHorario
                     label="Horário inicial"
-                    horarios={horarios}
+                    horarios={horario}
                     valor={horaInicial}
                     aoAlterado={valor => setHoraInicial(valor)}
                 />
                 <CampoHorario
                     label="Horário final"
-                    horarios={horarios}
+                    horarios={horario}
                     valor={horaFinal}
                     aoAlterado={valor => setHoraFinal(valor)}
                 />

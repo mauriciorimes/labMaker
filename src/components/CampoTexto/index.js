@@ -1,10 +1,10 @@
 import styles from './CampoTexto.module.css';
 
-function CampoTexto({ label, placeholder, type, obrigatorio, minlength, valor, aoAlterado })  {     
+function CampoTexto({ label, placeholder, type, obrigatorio, minlength, valor, aoAlterado, min })  {     
     
     const aoDigitado = (e) => {
         aoAlterado(e.target.value)
-    } 
+    }    
     
     return (
         <div className={styles.campoTexto}>
@@ -16,7 +16,8 @@ function CampoTexto({ label, placeholder, type, obrigatorio, minlength, valor, a
                 required={obrigatorio}
                 id={label}
                 type={type} 
-                minLength={minlength}                                                                    
+                minLength={minlength}
+                min={min}
             />
         </div>
     )

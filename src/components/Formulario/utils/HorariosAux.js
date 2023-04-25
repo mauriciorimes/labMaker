@@ -1,4 +1,4 @@
-export const horarios = [
+export const horariosAux = [
     "Escolha um horario",
     "07:00",
     "07:50",
@@ -21,7 +21,4 @@ export const horarios = [
     "20:40",
     "21:30",
     "22:20"
-
-    // "Escolha um horario",
-    // "07:00 as 07:50"
 ]
