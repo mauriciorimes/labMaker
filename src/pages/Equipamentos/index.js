@@ -38,7 +38,7 @@ export default function Equipamentos() {
                 label="Notebook"
                 quantidade="10"
                 imagem={notebook}
-                descricao="Pesquise, desenhe, leia! Use para aprimorar suas ideias!"                    
+                descricao="Pesquise, projete, documente suas descorbertas. Use para aprimorar suas ideias!"                    
             />            
         </div>
     )

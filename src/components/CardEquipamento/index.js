@@ -2,7 +2,7 @@ import styles from './CardEquipamento.module.css';
 
 export default function CardEquipamento({ label, quantidade, imagem, descricao }) { 
     return (
-        <section className={`${styles.cards}`}>
+        <section className={`${styles.CardEquipamento}`}>
             <img src={imagem} alt={label} />
             <div>
                 <label> {label} </label>

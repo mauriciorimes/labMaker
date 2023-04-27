@@ -38,5 +38,6 @@
     transform: scale(1.025);
     transition: 1s;
     width: 500px;
-    height: 560px;    
+    height: 560px; 
+    padding: 0.5em;   
 }
