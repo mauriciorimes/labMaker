@@ -39,5 +39,5 @@
     transition: 1s;
     width: 500px;
     height: 560px; 
-    padding: 0.5em;   
+    padding: 0.5em 0.5em 0em;   
 }
