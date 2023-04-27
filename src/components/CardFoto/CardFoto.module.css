@@ -39,5 +39,11 @@
     transition: 1s;
     width: 500px;
     height: 560px; 
-    padding: 0.5em 0.5em 0em;   
+    /* padding: 0.5em 0.5em 0em;    */
+}
+
+@media screen and (max-width: 550px) {
+    .CardFoto li:hover {
+        padding: 0.5em 0.5em 0em;
+    }  
 }
