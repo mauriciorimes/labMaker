@@ -4,12 +4,10 @@ import CampoHorario from '../CampoHorario';
 import CampoTexto from '../CampoTexto';
 import styles from './Formulario.module.css';
 import { maskPhone } from '../Formulario/utils/Mascaras.js';
-import { horarios } from '../Formulario/utils/Horarios.js';
+import { horasEntrada, horasSaida } from '../Formulario/utils/Horarios.js';
 import { collection, getDocs, addDoc, query, where, ref } from 'firebase/firestore/lite';
 import { db } from 'db/firebase';
 import { dataCortada } from './utils/Data';
-import { horariosAux } from './utils/HorariosAux';
-
 
 const Formulario = () => {
 
@@ -22,7 +20,8 @@ const Formulario = () => {
     const [horaFinal, setHoraFinal] = useState('');
     const [agendamento, setAgendamento] = useState([]);
 
-    const [horario, setHorario] = useState(horarios)
+    const [listaHorarioInicial, setListaHorarioInicial] = useState(horasEntrada)
+    const [listaHorarioFinal, setListaHorarioFinal] = useState(horasSaida)
 
     const useCollectionRef = collection(db, "agendamento")
 
@@ -30,27 +29,29 @@ const Formulario = () => {
         const obterAgendamentos = async () => {
             const dataBD = await getDocs(useCollectionRef)
             const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-            setAgendamento(todosAgendamentos)
+            setAgendamento(todosAgendamentos)            
 
-            const q = query(collection(db, "agendamento"), where("data", "==", data));
+            const q = query(collection(db, "agendamento"), where("data", "==", data));            
 
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach((doc) => {
-                console.log(`Data: ${doc.data().data}`)
-                console.log(doc.data().horaInicial)
-                console.log(doc.data().horaFinal);
-                
-                if (doc.data().horaInicial === null) {
-                    console.log('null');
-                }
-                
-                
+                const dataGuardada = doc.data().data
+                //console.log(`Data guardada: ${dataGuardada}`)               
+                const horaInicialGuardada = doc.data().horaInicial 
+                const horaFinalGuardada = doc.data().horaFinal
+                // console.log(`Hora inicial: ${horaInicialGuardada}`);               
+                // console.log(`Hora final: ${horaFinalGuardada}`);
+
+                console.log(`Agendamento de: ${horaInicialGuardada} a ${horaFinalGuardada}`);
+
+                alert(`Horarios ja agendados: de ${horaInicialGuardada} a ${horaFinalGuardada}`)
+
+                // if (horaInicialGuardada === horaInicial) alert(`Horario de: ${horaInicialGuardada} a ${horaFinalGuardada} ja agendado`);
+                // if (horaFinalGuardada === horaFinal) alert(`Horario de: ${horaFinalGuardada} ja agendado`);               
             })
-
-
         };
         obterAgendamentos();
-    }, [data]);
+    }, [data, horaInicial, horaFinal]);
 
     console.log('Teste de renderizacao');
 
@@ -68,6 +69,8 @@ const Formulario = () => {
         e.preventDefault();
         const horaInicialNumero = Number(horaInicial.replace(/[^0-9]/g, ''))
         const horaFinalNumero = Number(horaFinal.replace(/[^0-9]/g, ''))
+
+        
 
         if (horaInicialNumero === horaFinalNumero || horaInicialNumero > horaFinalNumero) {
             alert('Horário final não pode ser igual ou menor que horário inicial')
@@ -143,13 +146,13 @@ const Formulario = () => {
 
                 <CampoHorario
                     label="Horário inicial"
-                    horarios={horario}
+                    horarios={listaHorarioInicial}
                     valor={horaInicial}
                     aoAlterado={valor => setHoraInicial(valor)}
                 />
                 <CampoHorario
                     label="Horário final"
-                    horarios={horario}
+                    horarios={listaHorarioFinal}
                     valor={horaFinal}
                     aoAlterado={valor => setHoraFinal(valor)}
                 />

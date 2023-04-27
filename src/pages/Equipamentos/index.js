@@ -39,8 +39,7 @@ export default function Equipamentos() {
                 quantidade="10"
                 imagem={notebook}
                 descricao="Pesquise, desenhe, leia! Use para aprimorar suas ideias!"                    
-            />
-            
+            />            
         </div>
     )
 }

@@ -5,9 +5,7 @@ export default function CardInicio({ imagem, alt, titulo, descricao }) {
         <div className={styles.CardInicio}>
             <img src={imagem} alt={alt}/>
             <h2> {titulo} </h2>
-            <p> 
-                {descricao}
-            </p>
+            <p>{descricao}</p>
         </div>
     )
 }
