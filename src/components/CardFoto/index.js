@@ -6,7 +6,7 @@ export default function CardFoto({ fotos }) {
         <ul className={styles.CardFoto}>
 
             {fotos.map(foto => (
-                <li key={fotos.id}>
+                <li key={fotos.titulo}>
                     <img src={foto.imagem} alt={foto.titulo} />
                     <p> {foto.titulo} </p>
                 </li>

@@ -6,6 +6,7 @@ import Equipamentos from "./pages/Equipamentos";
 import GaleriaDeFotos from "./pages/GaleriaDeFotos";
 import Inicio from "./pages/Inicio";
 import PraticasPedagogicas from "./pages/PraticasPedagogicas";
+import AdminAgendamentos from "pages/AdminAgendamentos";
 
 function AppRoutes() {
   return (
@@ -17,6 +18,7 @@ function AppRoutes() {
         <Route path="/equipamentos" element={<Equipamentos />} />
         <Route path="/galeria" element={<GaleriaDeFotos />} />
         <Route path="/praticas" element={<PraticasPedagogicas />} />
+        <Route path="/admin" element={<AdminAgendamentos />} />
       </Routes>
       <Footer />    
     </BrowserRouter>

@@ -1,0 +1,12 @@
+.TabelaAdmin, .TabelaAdmin th, .TabelaAdmin td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.TabelaAdmin th {
+    padding: 0.5em;
+}
+
+.TabelaAdmin td {
+    width: 200px;
+}

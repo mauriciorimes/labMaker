@@ -99,7 +99,7 @@ const Formulario = () => {
                 <h2> Preencha os dados para completar seu agendamento</h2>
 
                 <CampoTexto
-                    label="Nome"
+                    label="Nome completo"
                     type="text"
                     placeholder="Digite seu nome"
                     obrigatorio={true}
@@ -131,7 +131,7 @@ const Formulario = () => {
                     placeholder="Digite onde você estuda"
                     obrigatorio={true}
                     valor={instituicao}
-                    minlength="10"
+                    minlength="3"
                     aoAlterado={valor => setInstituicao(valor)}
                 />
                 <CampoTexto
