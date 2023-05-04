@@ -1,0 +1,44 @@
+.AdminAgendamentos {
+    display: flex;
+    flex-direction: column;      
+    margin: 3em 1em;
+}
+
+.AdminAgendamentos h2 {
+    font-size: 32px;
+}
+
+.AdminAgendamentos div {
+    margin: 1em 0;
+}
+
+.AdminAgendamentos div label, .AdminAgendamentos div input {
+    font-size: 26px;
+}
+
+.AdminAgendamentos div input {
+    border-radius: 10px;
+}
+
+.AdminAgendamentos h3 {
+    display: none;
+    color: var(--vermelho-mapa);
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 905px) {
+    .AdminAgendamentos div input {        
+        margin-top: 0.8em;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .AdminAgendamentos {            
+        margin: 3em 0;
+    }
+    .AdminAgendamentos h3 {
+        display: block;        
+    }
+}

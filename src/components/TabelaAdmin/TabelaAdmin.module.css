@@ -1,12 +1,39 @@
-.TabelaAdmin, .TabelaAdmin th, .TabelaAdmin td {
-    border: 1px solid black;
-    border-collapse: collapse;
+.TabelaAdmin {
+    text-align: center;    
+}
+
+.TabelaAdmin, .TabelaAdmin td, .TabelaAdmin th {
+   border: solid black 1px; 
+   padding: 1.5em;  
+   
 }
 
 .TabelaAdmin th {
-    padding: 0.5em;
+    font-weight: bold;
+    background-color: var(--verde-medio);    
 }
 
-.TabelaAdmin td {
-    width: 200px;
+@media screen and (max-width: 950px) {
+    .TabelaAdmin, .TabelaAdmin td, .TabelaAdmin th {        
+        padding: 1em;         
+    }
 }
+
+@media screen and (max-width: 850px) {
+    .TabelaAdmin, .TabelaAdmin td, .TabelaAdmin th {        
+        padding: 0.5em;         
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .TabelaAdmin, .TabelaAdmin td, .TabelaAdmin th {        
+        padding: 0;         
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .TabelaAdmin {
+        display: none;    
+    }
+}
+
