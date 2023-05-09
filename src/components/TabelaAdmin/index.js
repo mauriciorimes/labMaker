@@ -17,9 +17,9 @@ export default function TabelaAdmin({ dados, data }) {
                     <th>
                         Instituição
                     </th>
-                    <th>
+                    {/* <th>
                         Data
-                    </th>
+                    </th> */}
                     <th>
                         Horário inicial
                     </th>
@@ -36,7 +36,7 @@ export default function TabelaAdmin({ dados, data }) {
                         <td> {agendamentos.email} </td>
                         <td> {agendamentos.telefone} </td>
                         <td> {agendamentos.instituicao} </td>
-                        <td> {agendamentos.data} </td>
+                        {/* <td> {agendamentos.data} </td> */}
                         <td> {agendamentos.horaInicial} </td>
                         <td> {agendamentos.horaFinal} </td>
                     </tr>                    
