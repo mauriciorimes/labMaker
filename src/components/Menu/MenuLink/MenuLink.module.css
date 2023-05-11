@@ -1,12 +1,12 @@
 .link {
-    text-decoration: none;
-    color: #000000;    
-    font-weight: bold;     
+    text-decoration: none;      
+    font-weight: bold; 
+    color: black;    
 }
 
 .linkDestacado {
     text-decoration: underline;
-    text-decoration-color: var(--vermelho-mapa);    
+    text-decoration-color: var(--vermelho-mapa);     
 }
 
 .link:hover {

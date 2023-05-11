@@ -5,28 +5,30 @@ import fotos from './fotos.json';
 import { useState } from 'react';
 import NearMeIcon from '@mui/icons-material/NearMe';
 
-export default function GaleriaDeFotos() {    
+export default function GaleriaDeFotos() {
     const [itens, setItens] = useState(fotos)
     const tags = [...new Set(fotos.map(tag => tag.tag))]
-    
+
 
     function filtrarFotos(tag) {
         const novasFotos = fotos.filter(foto => (
             foto.tag === tag
         ))
         setItens(novasFotos)
-    }     
-    
+    }
+
     return (
         <section className={styles.galeria}>
-            <ul>                                
+            <ul>
                 <li>
-                    <NearMeIcon />
+                    <NearMeIcon fontSize='large' />
                     <h2> Navega pela Galeria </h2>
                 </li>
             </ul>
-            <Tags tags={tags} filtrarFotos={filtrarFotos} setItens={setItens} />
-            <CardFoto fotos={itens}/>                     
+            <nav>
+                <Tags tags={tags} filtrarFotos={filtrarFotos} setItens={setItens} />
+            </nav>
+            <CardFoto fotos={itens} />
         </section>
     )
 }

@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import styles from './MenuLink.module.css';
 
 export default function MenuLink({ children, rota }) {
-    const localizacao = useLocation();
+    const localizacao = useLocation();   
 
     return(
         <Link 
@@ -12,7 +12,7 @@ export default function MenuLink({ children, rota }) {
                 ${localizacao.pathname === rota ? styles.linkDestacado : ""}
             `}
         >
-                <div> {children} </div>
+                <div> {children} </div>                
         </Link>
     )
 }

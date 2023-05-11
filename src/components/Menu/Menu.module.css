@@ -9,10 +9,12 @@
     box-sizing: border-box;
 }
 
-.Menu a {
-    text-decoration: none;
-    color: #000000;    
-    font-weight: bold;     
+.Menu h2 {
+    background-color: var(--vermelho-mapa);
+    padding: 0.8em;
+    border-radius: 25px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;     
 }
 
 .Menu section {
@@ -24,18 +26,6 @@
 .Menu ul {
     display: flex;
     align-items: center;
-}
-
-.labmaker {
-    background-color: var(--vermelho-mapa);
-    padding: 0.8em;
-    border-radius: 25px;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;    
-}
-
-.labmaker:hover {
-    background-color: var(--verde-claro);
 }
 
 @media screen and (max-width: 850px) {

@@ -1,0 +1,24 @@
+.CardTutorial {
+    margin-top: 1.5em;
+}
+
+.CardTutorial li {
+    display: flex;
+    flex-direction: column;
+    text-align: center;    
+}
+
+.CardTutorial li label {
+    font-size: 24px;
+    margin-bottom: 0.8em;
+}
+
+.CardTutorial li a {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.CardTutorial li a:hover {
+    color: var(--vermelho-mapa);
+}

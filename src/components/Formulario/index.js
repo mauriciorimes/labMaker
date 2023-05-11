@@ -18,10 +18,7 @@ const Formulario = () => {
     const [data, setData] = useState('');
     const [horaInicial, setHoraInicial] = useState('');
     const [horaFinal, setHoraFinal] = useState('');
-    const [agendamento, setAgendamento] = useState([]);
-
-    const [listaHorarioInicial, setListaHorarioInicial] = useState(horasEntrada)
-    const [listaHorarioFinal, setListaHorarioFinal] = useState(horasSaida)
+    const [agendamento, setAgendamento] = useState([]);   
 
     const useCollectionRef = collection(db, "agendamento")
 
@@ -29,31 +26,16 @@ const Formulario = () => {
         const obterAgendamentos = async () => {
             const dataBD = await getDocs(useCollectionRef)
             const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-            setAgendamento(todosAgendamentos)            
+            setAgendamento(todosAgendamentos)
 
-            const q = query(collection(db, "agendamento"), where("data", "==", data));            
-
+            const q = query(collection(db, "agendamento"), where("data", "==", data));
             const querySnapshot = await getDocs(q);
-            querySnapshot.forEach((doc) => {
-                const dataGuardada = doc.data().data
-                //console.log(`Data guardada: ${dataGuardada}`)               
-                const horaInicialGuardada = doc.data().horaInicial 
-                const horaFinalGuardada = doc.data().horaFinal
-                // console.log(`Hora inicial: ${horaInicialGuardada}`);               
-                // console.log(`Hora final: ${horaFinalGuardada}`);
-
-                console.log(`Agendamento de: ${horaInicialGuardada} a ${horaFinalGuardada}`);
-
-                alert(`Horarios ja agendados: de ${horaInicialGuardada} a ${horaFinalGuardada}`)
-
-                // if (horaInicialGuardada === horaInicial) alert(`Horario de: ${horaInicialGuardada} a ${horaFinalGuardada} ja agendado`);
-                // if (horaFinalGuardada === horaFinal) alert(`Horario de: ${horaFinalGuardada} ja agendado`);               
+            querySnapshot.forEach((doc) => {                              
+                alert(`Horarios ja agendados: de ${doc.data().horaInicial} a ${doc.data().horaFinal}`)
             })
         };
         obterAgendamentos();
-    }, [data, horaInicial, horaFinal]);
-
-    console.log('Teste de renderizacao');
+    }, [data]);    
 
     const limpaCampos = () => {
         setNome('');
@@ -66,13 +48,9 @@ const Formulario = () => {
     }
 
     async function aoSalvar(e) {
-        e.preventDefault();
-        const horaInicialNumero = Number(horaInicial.replace(/[^0-9]/g, ''))
-        const horaFinalNumero = Number(horaFinal.replace(/[^0-9]/g, ''))
+        e.preventDefault();   
 
-        
-
-        if (horaInicialNumero === horaFinalNumero || horaInicialNumero > horaFinalNumero) {
+        if (horaInicial === horaFinal || horaInicial > horaFinal) {
             alert('Horário final não pode ser igual ou menor que horário inicial')
 
         } else {
@@ -88,13 +66,13 @@ const Formulario = () => {
             })
             console.log(agend);
             limpaCampos();
-            alert(`Agendamento realizado com sucesso!`)
+            alert(`Agendamento realizado com sucesso!`)        
             window.scrollTo(0, 0);
         }
     }
 
     return (
-        <section className={styles.formulario}>            
+        <section className={styles.formulario}>
             <form onSubmit={aoSalvar}>
                 <h2> Preencha os dados para completar seu agendamento</h2>
 
@@ -146,13 +124,13 @@ const Formulario = () => {
 
                 <CampoHorario
                     label="Horário inicial"
-                    horarios={listaHorarioInicial}
+                    horarios={horasEntrada}
                     valor={horaInicial}
                     aoAlterado={valor => setHoraInicial(valor)}
                 />
                 <CampoHorario
                     label="Horário final"
-                    horarios={listaHorarioFinal}
+                    horarios={horasSaida}
                     valor={horaFinal}
                     aoAlterado={valor => setHoraFinal(valor)}
                 />

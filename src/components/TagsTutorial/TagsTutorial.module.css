@@ -1,0 +1,19 @@
+.TagsTutorial {
+    display: flex;
+    justify-content: space-around;    
+    width: 70%;
+}
+
+.TagsTutorial li {
+    background-color: var(--verde-medio);
+    padding: 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.TagsTutorial li:hover {
+    color: var(--vermelho-mapa);
+}
+
