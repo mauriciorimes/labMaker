@@ -1,5 +1,6 @@
 .TagsTutorial {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;    
     width: 70%;
 }
@@ -11,9 +12,34 @@
     font-weight: bold;
     cursor: pointer;
     font-size: 18px;
+    text-align: center;
 }
 
 .TagsTutorial li:hover {
     color: var(--vermelho-mapa);
 }
+
+@media screen and (max-width: 1150px) {
+    .TagsTutorial {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .TagsTutorial {
+        gap: 0.8em;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .TagsTutorial {
+        flex-direction: column;
+        width: 35%;        
+    }
+}
+
+
+
+
+
 
