@@ -1,5 +1,4 @@
 import styles from './CardTutorial.module.css';
-import tutoriais from '../../components/TagsTutorial/tutoriais.json';
 
 export default function CardTutorial({ itens }) {
     return (
@@ -7,7 +6,7 @@ export default function CardTutorial({ itens }) {
             {itens.map(tutorial => (
                 <li key={tutorial.id}>
                     <label> {tutorial.titulo} </label>
-                    <a href={tutorial.video} target='_blank' rel="noreferrer"> Clique aqui para um video explicativo. </a>
+                    <a href={tutorial.video} target='_blank' rel="noreferrer"> Clique aqui para um vídeo explicativo. </a>
                 </li>
             ))}
         </ul>

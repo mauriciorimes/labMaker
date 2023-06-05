@@ -31,13 +31,13 @@ export default function Menu() {
                             <li>Equipamentos</li>
                         </ul>
                     </MenuLink>
-                    <MenuLink rota="/galeria">
+                    <MenuLink rota="/galeria-de-fotos">
                         <ul>
                             <li><CameraAltIcon /></li>
                             <li>Galeria de Fotos</li>
                         </ul>
                     </MenuLink>
-                    <MenuLink rota="/praticas">
+                    <MenuLink rota="/praticas-pedagogicas">
                         <ul>
                             <li><LocalLibraryIcon /></li>
                             <li>Práticas Pedagógicas</li>

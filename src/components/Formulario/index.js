@@ -4,9 +4,9 @@ import CampoHorario from '../CampoHorario';
 import CampoTexto from '../CampoTexto';
 import styles from './Formulario.module.css';
 import { maskPhone } from '../Formulario/utils/Mascaras.js';
-import { horasEntrada, horasSaida } from '../Formulario/utils/Horarios.js';
+import { horasAgendamento } from '../Formulario/utils/Horarios.js';
 import { collection, getDocs, addDoc, query, where, ref } from 'firebase/firestore/lite';
-import { db } from 'db/firebase';
+import { db } from 'db/agendamento';
 import { dataCortada } from './utils/Data';
 
 const Formulario = () => {
@@ -18,7 +18,10 @@ const Formulario = () => {
     const [data, setData] = useState('');
     const [horaInicial, setHoraInicial] = useState('');
     const [horaFinal, setHoraFinal] = useState('');
-    const [agendamento, setAgendamento] = useState([]);   
+    const [agendamento, setAgendamento] = useState([]);
+    const [horasVagas, setHorasVagas] = useState(horasAgendamento)
+    
+    const [filtro, setFiltro] = useState([]);
 
     const useCollectionRef = collection(db, "agendamento")
 
@@ -26,16 +29,41 @@ const Formulario = () => {
         const obterAgendamentos = async () => {
             const dataBD = await getDocs(useCollectionRef)
             const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+            const filtroAgendamentosDoDia = todosAgendamentos.filter(filtrados => filtrados.data === data)
             setAgendamento(todosAgendamentos)
+            
 
-            const q = query(collection(db, "agendamento"), where("data", "==", data));
-            const querySnapshot = await getDocs(q);
-            querySnapshot.forEach((doc) => {                              
-                alert(`Horarios ja agendados: de ${doc.data().horaInicial} a ${doc.data().horaFinal}`)
-            })
+            const horariosIniciaisDoDia = filtroAgendamentosDoDia.map(h => h.horaInicial)
+            const horariosFinaisDoDia = filtroAgendamentosDoDia.map(h => h.horaFinal)
+
+            console.log(horariosIniciaisDoDia);
+            
+
+            const horariosDisponiveis = horasAgendamento.filter(h => h.disponivel === true)
+            console.log(horariosDisponiveis);
+            //setHorasVagas(horariosDisponiveis)
+
+            
+            
+            
+
+            
+            
+            // dia 17: 07h as 10h
+            // horas iniciais nao permitidas: 07h/08h/09h
+            // horas finais nao permitidas: 07h/8h/09h/10h
+
+
+            
+
+            
+
+            
+            
+            
         };
         obterAgendamentos();
-    }, [data]);    
+    }, [data, horaInicial, horaFinal]);    
 
     const limpaCampos = () => {
         setNome('');
@@ -48,10 +76,15 @@ const Formulario = () => {
     }
 
     async function aoSalvar(e) {
-        e.preventDefault();   
+        e.preventDefault();
+        const horaInicialNumber = Number(horaInicial);
+        const horaFinalNumber = Number(horaFinal) 
+        
+        //console.log(filtro);
+        
 
-        if (horaInicial === horaFinal || horaInicial > horaFinal) {
-            alert('Horário final não pode ser igual ou menor que horário inicial')
+        if (horaInicialNumber === horaFinalNumber || horaFinalNumber < horaInicialNumber) {
+            alert('Horário final não pode ser igual ou menor que horário inicial');            
 
         } else {
             console.log({ nome, email, telefone, instituicao, data, horaInicial, horaFinal });
@@ -64,7 +97,7 @@ const Formulario = () => {
                 horaInicial,
                 horaFinal
             })
-            console.log(agend);
+            //console.log(agend);
             limpaCampos();
             alert(`Agendamento realizado com sucesso!`)        
             window.scrollTo(0, 0);
@@ -78,7 +111,7 @@ const Formulario = () => {
 
                 <CampoTexto
                     label="Nome completo"
-                    type="text"
+                    type="text"                    
                     placeholder="Digite seu nome"
                     obrigatorio={true}
                     minlength="8"
@@ -101,6 +134,7 @@ const Formulario = () => {
                     type="tel"
                     placeholder="Digite seu telefone"
                     required
+                    minlength="14"
                     value={telefone}
                     onChange={(e) => setTelefone(maskPhone(e.target.value))}
                 />
@@ -124,13 +158,13 @@ const Formulario = () => {
 
                 <CampoHorario
                     label="Horário inicial"
-                    horarios={horasEntrada}
+                    horarios={horasVagas}
                     valor={horaInicial}
                     aoAlterado={valor => setHoraInicial(valor)}
                 />
                 <CampoHorario
                     label="Horário final"
-                    horarios={horasSaida}
+                    horarios={horasVagas}
                     valor={horaFinal}
                     aoAlterado={valor => setHoraFinal(valor)}
                 />

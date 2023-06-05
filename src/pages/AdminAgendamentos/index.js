@@ -1,5 +1,5 @@
 import TabelaAdmin from "components/TabelaAdmin";
-import { db } from "db/firebase";
+import { db } from "db/agendamento";
 import { collection, getDocs } from "firebase/firestore/lite";
 import { useEffect, useState } from "react";
 import styles from './AdminAgendamentos.module.css';
@@ -17,6 +17,7 @@ export default function AdminAgendamentos() {
             const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
             const filtro = todosAgendamentos.filter(filtrados => filtrados.data === adminData)
             setAdminAgendamento(filtro)
+            console.log(filtro);
         };
         obterAgendamentos();
     }, [adminData]);

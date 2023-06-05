@@ -7,6 +7,7 @@ import GaleriaDeFotos from "./pages/GaleriaDeFotos";
 import Inicio from "./pages/Inicio";
 import PraticasPedagogicas from "./pages/PraticasPedagogicas";
 import AdminAgendamentos from "pages/AdminAgendamentos";
+import AdminPraticasPedagogicas from "pages/AdminPraticasPedagogicas";
 
 function AppRoutes() {
   return (
@@ -16,9 +17,10 @@ function AppRoutes() {
         <Route path="/" element={<Inicio />} />
         <Route path="/agendamento" element={<Agendamento />} />
         <Route path="/equipamentos" element={<Equipamentos />} />
-        <Route path="/galeria" element={<GaleriaDeFotos />} />
-        <Route path="/praticas" element={<PraticasPedagogicas />} />
-        <Route path="/admin" element={<AdminAgendamentos />} />
+        <Route path="/galeria-de-fotos" element={<GaleriaDeFotos />} />
+        <Route path="/praticas-pedagogicas" element={<PraticasPedagogicas />} />
+        <Route path="/admin-agendamento" element={<AdminAgendamentos />} />
+        <Route path="/admin-professor" element={<AdminPraticasPedagogicas />} />
       </Routes>
       <Footer />    
     </BrowserRouter>
