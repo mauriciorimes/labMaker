@@ -1,0 +1,15 @@
+.BotaoUpload {
+    background-color: var(--verde-escuro);
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    margin: 32px 0;
+}
+
+.BotaoUpload:hover {
+    color: var(--vermelho-mapa);
+}

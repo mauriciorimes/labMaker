@@ -1,3 +1,27 @@
-.Conhecimento ul li span {
-    display: none;
+.Conhecimento {
+    margin: 2em 0;
 }
+
+.Conhecimento ul li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;    
+}
+
+.Conhecimento ul li:hover {
+    cursor: pointer;
+    color: var(--vermelho-mapa);
+}
+
+.Conhecimento ul li label:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {       
+     .Conhecimento ul li label {        
+        width: 80%;
+        padding: 0 1em;
+     }
+}
+
+

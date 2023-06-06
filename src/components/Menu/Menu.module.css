@@ -28,15 +28,26 @@
     align-items: center;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 850px) {  
+    .Menu {
+        justify-content: space-around;
+        gap: 2.5em;
+    }  
     .Menu section {        
-        flex-direction: column;        
-        margin: 0 30%;
+        flex-direction: column;
+        width: 40%;                
     }
     .Menu ul {
         padding: 5px 0;
     }    
 }
+
+@media screen and (max-width: 500px) {       
+    .Menu section {     
+        width: 80%;     
+    }    
+}
+
 
 
 

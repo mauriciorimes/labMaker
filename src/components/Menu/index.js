@@ -8,7 +8,7 @@ import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 
 export default function Menu() {
     return (
-        <header>
+        
             <nav className={styles.Menu}>
                 <h2> LabMaker </h2>
 
@@ -45,6 +45,6 @@ export default function Menu() {
                     </MenuLink>
                 </section>
             </nav>
-        </header>
+        
     )
 }

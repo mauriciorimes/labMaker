@@ -6,8 +6,8 @@ import Equipamentos from "./pages/Equipamentos";
 import GaleriaDeFotos from "./pages/GaleriaDeFotos";
 import Inicio from "./pages/Inicio";
 import PraticasPedagogicas from "./pages/PraticasPedagogicas";
-import AdminAgendamentos from "pages/AdminAgendamentos";
-import AdminPraticasPedagogicas from "pages/AdminPraticasPedagogicas";
+import AdminAgendamentos from "pages/AdminAgendamento";
+import AdminPraticasPedagogicas from "pages/AdminProfessor";
 
 function AppRoutes() {
   return (

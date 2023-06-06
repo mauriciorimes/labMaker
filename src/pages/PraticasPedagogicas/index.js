@@ -49,9 +49,7 @@ export default function PraticasPedagogicas() {
                         <TouchAppIcon fontSize='medium' />
                         <h3> Clique para baixar um aula: </h3>
                     </li>
-                </ul>
-                                
-                {/* <TagsAreaConhecimento tags={tagsAreaConhecimento} filtrarAreaConhecimento={filtrarAreaConhecimento}/> */}
+                </ul>                
             </nav>
             <CardAreaConhecimento itens={areaConhecimento}/>
 

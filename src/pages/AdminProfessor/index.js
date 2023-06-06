@@ -1,13 +1,15 @@
 import { storage } from "db/agendamento";
-import { getDownloadURL, getStorage, listAll, ref, uploadBytesResumable } from "firebase/storage";
-import { useEffect, useState } from "react"
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { useState } from "react";
+import styles from './AdminProfessor.module.css';
+import BotaoUpload from "./BotaoUpload";
 
-export default function AdminPraticasPedagogicas() {
+export default function AdminProfessor() {
 
     const [pdf, setPdf] = useState("");
     const [progress, setProgress] = useState(0);   
 
-    const handleUpload = (event) => {
+    const upload = (event) => {
         event.preventDefault();
         const file = event.target[0]?.files[0];
         if (!file) return
@@ -19,7 +21,7 @@ export default function AdminPraticasPedagogicas() {
             "state_changed",
             snapshot => {
                 const Calcprogress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                setProgress(Calcprogress)
+                setProgress(Calcprogress.toFixed(0))                                
             },
             error => {
                 alert(error)
@@ -27,20 +29,24 @@ export default function AdminPraticasPedagogicas() {
             () => {
                 getDownloadURL(uploadTask.snapshot.ref).then(url => {
                     setPdf(url)
-                })
+                    alert(`Arquivo enviado com sucesso!`);
+                })                
             }
         )
     }
     
     return (
-        <div>
-            <form onSubmit={handleUpload}>
+        <section className={styles.AdminProfessor}>
+            <h2> Área administrativa dos Professores. </h2>
+            <form onSubmit={upload}>
                 <input type="file" />
-                <button type="submit"> Upload </button>
+                <BotaoUpload>
+                    Upload
+                </BotaoUpload>                              
             </form>
             <br />
-            <h2> Carregamento concluido % {progress}</h2>
+            <h3> Status do carregamento {progress}%</h3>
             <br />            
-        </div>
+        </section>
     )
 }
