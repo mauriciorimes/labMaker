@@ -1,26 +1,4 @@
 .AdminProfessor {
-    margin: 2em 2em;
-    
-}
-
-.AdminProfessor h2 {
-    font-size: 32px;
-}
-
-.AdminProfessor form {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    
-}
-
-.AdminProfessor form input {
-    padding: 12px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.AdminProfessor h3 {
-    font-size: 18px;
+    margin: 2em 2em;    
 }
 

@@ -1,0 +1,36 @@
+.AdminProfessorVisitante {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.AdminProfessorVisitante h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 1em;     
+}
+
+.AdminProfessorVisitante form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+
+.AdminProfessorVisitante form div {
+    display: flex; 
+    align-items: center;
+    gap: 0.5em;
+}
+
+.AdminProfessorVisitante form input {
+    padding: 14px;
+    border-radius: 10px;    
+    font-size: 18px;
+    width: 200px;
+}
+
+@media screen and (max-width: 720px) {       
+       
+}

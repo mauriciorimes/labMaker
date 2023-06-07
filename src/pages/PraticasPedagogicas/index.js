@@ -4,21 +4,14 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import TouchAppIcon from '@mui/icons-material/TouchApp';
 import TagsTutorial from 'components/TagsTutorial';
 import tutoriais from 'components/TagsTutorial/tutoriais.json';
-import areaConhecimentos from 'components/TagsAreaConhecimento/areaConhecimento.json';
-import { useEffect, useState } from 'react';
-import CardTutorial from 'components/CardTutorial';
-import TagsAreaConhecimento from 'components/TagsAreaConhecimento';
-import CardAreaConhecimento from 'components/CardAreaConhecimento';
-import { getDownloadURL, getStorage, ref } from 'firebase/storage';
+import { useState } from 'react';
+import PdfDownloads from 'components/PdfDownloads';
+import Tutorial from 'components/Tutorial';
 
 export default function PraticasPedagogicas() {
 
-    const [tutorial, setTutorial] = useState([]);
-    const [areaConhecimento, setAreaConhecimento] = useState([]);
-    const tagsAreaConhecimento = areaConhecimentos.map(tag => tag.tag)
-    const tagsTutorial = tutoriais.map(tag => tag.tag);
-
-    //     
+    const [tutorial, setTutorial] = useState([]);        
+    const tagsTutorial = tutoriais.map(tag => tag.tag);     
 
     function filtrarTutoriais(tag) {
         const novosFiltros = tutoriais.filter(tutorial => (
@@ -27,16 +20,6 @@ export default function PraticasPedagogicas() {
         setTutorial(novosFiltros)
     }
 
-    function filtrarAreaConhecimento(tag) {
-        const novosFiltross = areaConhecimentos.filter(tutorial => (
-            tutorial.tag === tag
-        ))
-        setAreaConhecimento(novosFiltross)
-    }
-
-    //
-
-    
     return (
         <section className={styles.Praticas}>
             <div>
@@ -51,7 +34,7 @@ export default function PraticasPedagogicas() {
                     </li>
                 </ul>                
             </nav>
-            <CardAreaConhecimento itens={areaConhecimento}/>
+            <PdfDownloads />
 
             <div>
                 <AutoStoriesIcon fontSize='large' />
@@ -66,7 +49,7 @@ export default function PraticasPedagogicas() {
                 </ul>
                 <TagsTutorial tags={tagsTutorial} filtrarTutoriais={filtrarTutoriais} />
             </nav>
-            <CardTutorial itens={tutorial} />
+            <Tutorial itens={tutorial} />
         </section>
 
     )

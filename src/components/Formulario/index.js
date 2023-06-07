@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import Botao from '../Botao';
-import CampoHorario from '../CampoHorario';
-import CampoTexto from '../CampoTexto';
+import Botao from './Botao';
+import CampoHorario from './CampoHorario';
+import CampoTexto from './CampoTexto';
 import styles from './Formulario.module.css';
 import { maskPhone } from '../Formulario/utils/Mascaras.js';
 import { horasAgendamento } from '../Formulario/utils/Horarios.js';

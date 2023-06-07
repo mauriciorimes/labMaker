@@ -1,10 +1,10 @@
 import { getDownloadURL, getStorage, listAll, ref } from "firebase/storage";
 import { useEffect, useState } from "react";
-import styles from './CardAreaConhecimento.module.css';
+import styles from './PdfDownloads.module.css';
 import 'firebase/storage';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
-export default function CardAreaConhecimento({ itens }) {
+export default function PdfDownloads() {
 
     const [caminhoPdf, setCaminhoPdf] = useState([]);
 

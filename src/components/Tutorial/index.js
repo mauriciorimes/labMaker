@@ -1,6 +1,6 @@
-import styles from './CardTutorial.module.css';
+import styles from './Tutorial.module.css';
 
-export default function CardTutorial({ itens }) {
+export default function Tutorial({ itens }) {
     return (
         <ul className={styles.CardTutorial}>
             {itens.map(tutorial => (

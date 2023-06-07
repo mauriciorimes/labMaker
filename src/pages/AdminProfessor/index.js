@@ -1,52 +1,43 @@
-import { storage } from "db/agendamento";
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { useState } from "react";
 import styles from './AdminProfessor.module.css';
-import BotaoUpload from "./BotaoUpload";
+import AdminProfessorLogado from "components/AdminProfessor/AdminProfessorLogado";
+import AdminProfessorVisitante from "components/AdminProfessor/AdminProfessorVisitante";
 
 export default function AdminProfessor() {
 
-    const [pdf, setPdf] = useState("");
-    const [progress, setProgress] = useState(0);   
+    const [usuario, setUsuario] = useState("");
+    const [senha, setSenha] = useState("");
+    const [autenticado, setAutenticado] = useState(false);
 
-    const upload = (event) => {
-        event.preventDefault();
-        const file = event.target[0]?.files[0];
-        if (!file) return
+    function login(e) {
+        e.preventDefault();
+        const USUARIO_PROFESSOR = "professor";
+        const SENHA_PROFESSOR = "iff"
+        const visitante = { usuario, senha }
 
-        const storageRef = ref(storage, `pdfs/${file.name}`)
-        const uploadTask = uploadBytesResumable(storageRef, file)
+        if (visitante.usuario === USUARIO_PROFESSOR && visitante.senha === SENHA_PROFESSOR) {
+            setAutenticado(true)
+            alert(`Usuario logado!`)
 
-        uploadTask.on(
-            "state_changed",
-            snapshot => {
-                const Calcprogress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                setProgress(Calcprogress.toFixed(0))                                
-            },
-            error => {
-                alert(error)
-            },
-            () => {
-                getDownloadURL(uploadTask.snapshot.ref).then(url => {
-                    setPdf(url)
-                    alert(`Arquivo enviado com sucesso!`);
-                })                
-            }
-        )
+        } else {
+            alert(`Usuário e/ou senha errados!`)
+            setAutenticado(false)
+        }
+
     }
-    
+
     return (
         <section className={styles.AdminProfessor}>
-            <h2> Área administrativa dos Professores. </h2>
-            <form onSubmit={upload}>
-                <input type="file" />
-                <BotaoUpload>
-                    Upload
-                </BotaoUpload>                              
-            </form>
-            <br />
-            <h3> Status do carregamento {progress}%</h3>
-            <br />            
+            {!autenticado ?
+                <AdminProfessorVisitante
+                    usuario={usuario}
+                    setUsuario={setUsuario}
+                    senha={senha}
+                    setSenha={setSenha}
+                    login={login}
+                />
+                : <AdminProfessorLogado />
+            }
         </section>
     )
 }
