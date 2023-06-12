@@ -1,6 +1,10 @@
+import BotaoConfirmarAgendamento from 'components/BotaoConfirmarAgendamento';
 import styles from './TabelaAdmin.module.css';
 
-export default function TabelaAdmin({ dados, data }) {
+export default function TabelaAdmin({ dados }) {
+
+    
+
     return (
         <table className={styles.TabelaAdmin}>
             <thead>
@@ -13,19 +17,19 @@ export default function TabelaAdmin({ dados, data }) {
                     </th>
                     <th>
                         Telefone
-                    </th>                   
+                    </th>
                     <th>
                         Instituição
                     </th>
-                    {/* <th>
-                        Data
-                    </th> */}
                     <th>
                         Horário inicial
                     </th>
                     <th>
                         Horário final
-                    </th>                    
+                    </th>
+                    <th>
+                        Status
+                    </th>
                 </tr>
             </thead>
 
@@ -36,10 +40,14 @@ export default function TabelaAdmin({ dados, data }) {
                         <td> {agendamentos.email} </td>
                         <td> {agendamentos.telefone} </td>
                         <td> {agendamentos.instituicao} </td>
-                        {/* <td> {agendamentos.data} </td> */}
                         <td> {agendamentos.horaInicial} </td>
                         <td> {agendamentos.horaFinal} </td>
-                    </tr>                    
+                        <td>
+                            <form action='mailto:mauriciorimes@gmail.com' method='post' encType='text/plain'>                                
+                                <BotaoConfirmarAgendamento> Confirmar </BotaoConfirmarAgendamento>
+                            </form>
+                        </td>
+                    </tr>
                 </tbody>
 
             ))}
