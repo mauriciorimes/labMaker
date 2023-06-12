@@ -1,4 +1,4 @@
-import TabelaAdmin from "components/TabelaAdmin";
+import TabelaAdmin from "components/AdminAgendamento/TabelaAdmin";
 import { db } from "db/agendamento";
 import { collection, getDocs } from "firebase/firestore/lite";
 import { useEffect, useState } from "react";

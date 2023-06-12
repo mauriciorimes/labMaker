@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from './AdminAgendamentos.module.css';
 import AdminProfessorVisitante from "components/AdminVisitante";
-import AdminAgendamentoLogado from "components/AdminAgendamentoLogado";
+import AdminAgendamentoLogado from "components/AdminAgendamento/AdminAgendamentoLogado";
 
 export default function AdminAgendamentos() {
 
