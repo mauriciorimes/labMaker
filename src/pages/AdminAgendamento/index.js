@@ -1,40 +1,41 @@
-import TabelaAdmin from "components/TabelaAdmin";
-import { db } from "db/agendamento";
-import { collection, getDocs } from "firebase/firestore/lite";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from './AdminAgendamentos.module.css';
+import AdminProfessorVisitante from "components/AdminVisitante";
+import AdminAgendamentoLogado from "components/AdminAgendamentoLogado";
 
 export default function AdminAgendamentos() {
 
-    const [adminAgendamento, setAdminAgendamento] = useState([]);
-    const [adminData, setAdminData] = useState('')
+    const [usuario, setUsuario] = useState("");
+    const [senha, setSenha] = useState("");
+    const [autenticado, setAutenticado] = useState(false);
 
-    const useCollectionRef = collection(db, "agendamento")
+    function login(e) {
+        e.preventDefault();
+        const USUARIO_ADMIN = "admin";
+        const SENHA_ADMIN = "labmaker"
+        const visitante = { usuario, senha }
 
-    useEffect(() => {
-        const obterAgendamentos = async () => {
-            const dataBD = await getDocs(useCollectionRef)
-            const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-            const filtro = todosAgendamentos.filter(filtrados => filtrados.data === adminData)
-            setAdminAgendamento(filtro)
-            console.log(filtro);
-        };
-        obterAgendamentos();
-    }, [adminData]);
+        if (visitante.usuario === USUARIO_ADMIN && visitante.senha === SENHA_ADMIN) {
+            setAutenticado(true)
+            alert(`Usuario logado!`)
+
+        } else {
+            alert(`Usuário e/ou senha errados!`)
+            setAutenticado(false)
+        }
+    }
 
     return (
         <section className={styles.AdminAgendamentos}>
-            <h2> Área administrativa de agendamentos </h2>
-            <div>
-                <label> Selecione uma data para ver os agendamentos do dia: </label>
-                <input
-                    value={adminData}
-                    type="date"
-                    onChange={(e) => setAdminData(e.target.value)}
-                />
-            </div>
-            <h3> Tabela não disponível para versão mobile. </h3>            
-            <TabelaAdmin dados={adminAgendamento} data={adminData} />
+            {!autenticado ?
+                <AdminProfessorVisitante
+                    usuario={usuario}
+                    setUsuario={setUsuario}
+                    senha={senha}
+                    setSenha={setSenha}
+                    login={login}
+                /> : <AdminAgendamentoLogado />
+            }
         </section>
     )
 }

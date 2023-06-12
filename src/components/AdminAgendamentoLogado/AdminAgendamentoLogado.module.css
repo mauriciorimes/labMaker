@@ -1,0 +1,38 @@
+.AdminAgendamentoLogado h2 {
+    font-size: 32px;
+}
+
+.AdminAgendamentoLogado div {
+    margin: 1em 0;
+}
+
+.AdminAgendamentoLogado div label, .AdminAgendamentoLogado div input {
+    font-size: 26px;
+}
+
+.AdminAgendamentoLogado div input {
+    border-radius: 10px;
+}
+
+.AdminAgendamentoLogado h3 {
+    display: none;
+    color: var(--vermelho-mapa);
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 905px) {
+    .AdminAgendamentoLogado div input {        
+        margin-top: 0.8em;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .AdminAgendamentoLogado {            
+        margin: 3em 0;
+    }
+    .AdminAgendamentoLogado h3 {
+        display: block;        
+    }
+}
