@@ -9,6 +9,9 @@ import { collection, getDocs, addDoc, query, where, ref } from 'firebase/firesto
 import { db } from 'db/agendamento';
 import { dataCortada } from './utils/Data';
 
+//
+
+
 const Formulario = () => {
 
     const [nome, setNome] = useState('');
@@ -20,7 +23,7 @@ const Formulario = () => {
     const [horaFinal, setHoraFinal] = useState('');
     const [agendamento, setAgendamento] = useState([]);
     const [horasVagas, setHorasVagas] = useState(horasAgendamento)
-    
+
     const [filtro, setFiltro] = useState([]);
 
     const useCollectionRef = collection(db, "agendamento")
@@ -31,39 +34,39 @@ const Formulario = () => {
             const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
             const filtroAgendamentosDoDia = todosAgendamentos.filter(filtrados => filtrados.data === data)
             setAgendamento(todosAgendamentos)
-            
+
 
             const horariosIniciaisDoDia = filtroAgendamentosDoDia.map(h => h.horaInicial)
             const horariosFinaisDoDia = filtroAgendamentosDoDia.map(h => h.horaFinal)
 
             console.log(horariosIniciaisDoDia);
-            
+
 
             const horariosDisponiveis = horasAgendamento.filter(h => h.disponivel === true)
             console.log(horariosDisponiveis);
             //setHorasVagas(horariosDisponiveis)
 
-            
-            
-            
 
-            
-            
+
+
+
+
+
             // dia 17: 07h as 10h
             // horas iniciais nao permitidas: 07h/08h/09h
             // horas finais nao permitidas: 07h/8h/09h/10h
 
 
-            
 
-            
 
-            
-            
-            
+
+
+
+
+
         };
         obterAgendamentos();
-    }, [data, horaInicial, horaFinal]);    
+    }, [data, horaInicial, horaFinal]);
 
     const limpaCampos = () => {
         setNome('');
@@ -74,20 +77,32 @@ const Formulario = () => {
         setHoraInicial('');
         setHoraFinal('');
     }
+    //
+  
+
+
+
+
+
+
+
 
     async function aoSalvar(e) {
         e.preventDefault();
         const horaInicialNumber = Number(horaInicial);
-        const horaFinalNumber = Number(horaFinal) 
-        
-        //console.log(filtro);
-        
+        const horaFinalNumber = Number(horaFinal);
+
+        const MENSAGEM_CONFIRMACAO = `Seu agendamento foi concluído com sucesso!
+            Sua visita está marcada para o dia ${data},
+            de ${horaInicial} às ${horaFinal}.`;
 
         if (horaInicialNumber === horaFinalNumber || horaFinalNumber < horaInicialNumber) {
-            alert('Horário final não pode ser igual ou menor que horário inicial');            
+            alert('Horário final não pode ser igual ou menor que horário inicial');
 
         } else {
             console.log({ nome, email, telefone, instituicao, data, horaInicial, horaFinal });
+
+            console.log(MENSAGEM_CONFIRMACAO);
             const agend = await addDoc(useCollectionRef, {
                 nome,
                 email,
@@ -97,9 +112,9 @@ const Formulario = () => {
                 horaInicial,
                 horaFinal
             })
-            //console.log(agend);
+
             limpaCampos();
-            alert(`Agendamento realizado com sucesso!`)        
+            alert(`Agendamento realizado com sucesso!`)
             window.scrollTo(0, 0);
         }
     }
@@ -111,7 +126,7 @@ const Formulario = () => {
 
                 <CampoTexto
                     label="Nome completo"
-                    type="text"                    
+                    type="text"
                     placeholder="Digite seu nome"
                     obrigatorio={true}
                     minlength="8"

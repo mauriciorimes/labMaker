@@ -8,43 +8,42 @@ import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 
 export default function Menu() {
     return (
-        
-            <nav className={styles.Menu}>
-                <h2> LabMaker </h2>
+        <nav className={styles.Menu}>
+            <h2> LabMaker </h2>
 
-                <section>
-                    <MenuLink rota="/">
-                        <ul>
-                            <li><HomeIcon /></li>
-                            <li>Início</li>
-                        </ul>
-                    </MenuLink>
-                    <MenuLink rota="/agendamento">
-                        <ul>
-                            <li><CalendarMonthIcon /></li>
-                            <li>Agendar</li>
-                        </ul>
-                    </MenuLink>
-                    <MenuLink rota="/equipamentos">
-                        <ul>
-                            <li><PrecisionManufacturingIcon /></li>
-                            <li>Equipamentos</li>
-                        </ul>
-                    </MenuLink>
-                    <MenuLink rota="/galeria-de-fotos">
-                        <ul>
-                            <li><CameraAltIcon /></li>
-                            <li>Galeria de Fotos</li>
-                        </ul>
-                    </MenuLink>
-                    <MenuLink rota="/praticas-pedagogicas">
-                        <ul>
-                            <li><LocalLibraryIcon /></li>
-                            <li>Práticas Pedagógicas</li>
-                        </ul>
-                    </MenuLink>
-                </section>
-            </nav>
-        
+            <section>
+                <MenuLink rota="/">
+                    <ul>
+                        <li><HomeIcon /></li>
+                        <li>Início</li>
+                    </ul>
+                </MenuLink>
+                <MenuLink rota="/agendamento">
+                    <ul>
+                        <li><CalendarMonthIcon /></li>
+                        <li>Agendar</li>
+                    </ul>
+                </MenuLink>
+                <MenuLink rota="/equipamentos">
+                    <ul>
+                        <li><PrecisionManufacturingIcon /></li>
+                        <li>Equipamentos</li>
+                    </ul>
+                </MenuLink>
+                <MenuLink rota="/galeria-de-fotos">
+                    <ul>
+                        <li><CameraAltIcon /></li>
+                        <li>Galeria de Fotos</li>
+                    </ul>
+                </MenuLink>
+                <MenuLink rota="/praticas-pedagogicas">
+                    <ul>
+                        <li><LocalLibraryIcon /></li>
+                        <li>Práticas Pedagógicas</li>
+                    </ul>
+                </MenuLink>
+            </section>
+        </nav>
+
     )
 }

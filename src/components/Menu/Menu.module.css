@@ -9,6 +9,11 @@
     box-sizing: border-box;
 }
 
+.Menu img {
+    width: 20px;
+    height: 20px;
+}
+
 .Menu h2 {
     background-color: var(--vermelho-mapa);
     padding: 0.8em;
