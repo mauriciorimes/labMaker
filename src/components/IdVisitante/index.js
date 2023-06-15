@@ -5,11 +5,15 @@ import IdArte from 'components/IdArte';
 import styles from './IdVisitante.module.css';
 import BotaoPesquisarEmail from 'components/BotaoPesquisarEmail';
 import SearchIcon from '@mui/icons-material/Search';
+import IdEmailNaoEncontrado from 'components/IdEmailNaoEncontrado';
 
 export default function IdVisitante() {
     const [email, setEmail] = useState('');
     const [agendamento, setAgendamento] = useState([]);
     const [usuarioEncontrado, setUsusarioEncontrado] = useState([]);
+    const [autenticado, setAutenticado] = useState(false)
+
+    const [nomeEnviado, setNomeEnviado] = useState([])
 
     const useCollectionRef = collection(db, "agendamento")
 
@@ -20,19 +24,21 @@ export default function IdVisitante() {
             setAgendamento(todosAgendamentos)
         }
         obterAgendamentos();
-    }, [])
+    }, [email])
 
     function pesquisarPorEmail() {
         const filtradoPorEmail = agendamento.filter(encontrado => encontrado.email === email)
-        if (filtradoPorEmail) {
-            console.log(`Encontrado`);
-            console.log(filtradoPorEmail);
+        const nomeEnviar = [...new Set(filtradoPorEmail.map(nome => nome.nome))]
+        setNomeEnviado(nomeEnviar)
+        
+        if (filtradoPorEmail.length > 0) {
+            setAutenticado(false)
+            console.log(`Encontrado`); 
+            console.log(nomeEnviar.length);   
+            // console.log(filtradoPorEmail);                 
             setUsusarioEncontrado(filtradoPorEmail);
 
-        } else {
-            console.log('Email nao encontrado');
-            alert(`Email nao encontrado`)
-        }
+        } else setAutenticado(true)       
     }
 
     return (
@@ -45,9 +51,8 @@ export default function IdVisitante() {
                         <SearchIcon />
                     </BotaoPesquisarEmail>                    
                 </div>
-            </nav>
-                        
-            <IdArte usuarioEncontrado={usuarioEncontrado} />
+            </nav>            
+            {!autenticado ? <IdArte usuarioEncontrado={usuarioEncontrado} nome={nomeEnviado}/> : <IdEmailNaoEncontrado />}           
         </section>
     )
 }

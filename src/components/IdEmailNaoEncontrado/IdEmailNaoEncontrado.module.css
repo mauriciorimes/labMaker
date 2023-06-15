@@ -1,0 +1,16 @@
+.IdEmailNaoEncontrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.IdEmailNaoEncontrado img {
+    width: 200px;
+    height: auto;
+}
+
+.IdEmailNaoEncontrado span {
+    font-size: 26px;
+    font-weight: bold;
+}

@@ -1,23 +1,27 @@
 .IdArte {
-    background-color: whitesmoke;
+    background: url('../../image/id/background.jpg') no-repeat right top;
+    background-size: cover;
+    
     width: 300px;
-    height: 400px;
+    height: auto;
     margin-bottom: 2em;
     display: flex;
     flex-direction: column;
     gap: 2em;
     align-items: center;
-}
-
-.IdArte img {
-    width: 150px;
-    height: auto;
-    padding-top: 3em;
+    padding: 3em 0;
 }
 
 .IdArte div {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.IdArte div img {
+    width: 150px;
+    height: auto;
+    padding-bottom: 1em;    
 }
 
 .IdArte div h2 {
@@ -25,11 +29,13 @@
     font-size: 26px;
     text-align: center;
     color: var(--seu-nome-id);
+    padding-bottom: 0.2em;
 }
 
-.IdArte div h3 {
-    text-align: center;
-    margin-bottom: 1em;
+.IdArte div ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .IdArte div ul li {
