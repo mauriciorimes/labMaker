@@ -1,0 +1,14 @@
+.TabelaAgendamentosDoDia {
+    text-align: center;    
+}
+
+.TabelaAgendamentosDoDia, .TabelaAgendamentosDoDia td, .TabelaAgendamentosDoDia th {
+   border: solid black 1px; 
+   padding: 1.5em;  
+   
+}
+
+.TabelaAgendamentosDoDia th {
+    font-weight: bold;
+    background-color: var(--verde-medio);    
+}

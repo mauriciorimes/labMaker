@@ -34,7 +34,7 @@ export default function AdminAgendamentoLogado() {
                 />
             </div>
             <h3> Tabela não disponível para versão mobile. </h3>
-            <TabelaAdmin dados={adminAgendamento} data={adminData} />
+            <TabelaAdmin dados={adminAgendamento} />
         </div>
     )
 }

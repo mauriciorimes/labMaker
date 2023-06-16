@@ -1,0 +1,39 @@
+.AgendamentosDoDia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3em;
+    gap: 1em;
+}
+
+.AgendamentosDoDia h2 {
+    font-size: 26px;
+    font-weight: 300;
+}
+
+.AgendamentosDoDia div {
+    margin-bottom: 15px;
+}
+
+.AgendamentosDoDia div label {
+    font-size: 22px;
+}
+
+.AgendamentosDoDia div input {
+    font-size: 22px;
+    border: none;
+    border-radius: 20px;
+    padding: 0.3em;
+}
+
+@media screen and (max-width: 780px) {       
+    .AgendamentosDoDia div {     
+        display: flex;     
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }    
+    .AgendamentosDoDia div label {
+        text-align: center;
+    }
+}

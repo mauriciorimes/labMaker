@@ -1,7 +1,7 @@
 .formulario {
     display: flex;
     justify-content: center;
-    margin: 80px 0;
+    margin: 50px 0;
     background-color: var(--verde-claro);
     font-family: 'Montserrat', sans-serif;    
 }
