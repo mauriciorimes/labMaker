@@ -12,7 +12,7 @@ export default function CampoHorario({ label, horarios, aoAlterado }) {
                 htmlFor={label}> {label} </label>
             <select onChange={aoEscolhido} id={label}>
                 {horarios.map(horario => (
-                    <option key={horario.horario}> {horario.horario} </option>
+                    <option key={horario}> {horario} </option>
                 ))}
             </select>
         </div>

@@ -4,13 +4,11 @@ import CampoHorario from './CampoHorario';
 import CampoTexto from './CampoTexto';
 import styles from './Formulario.module.css';
 import { maskPhone } from '../Formulario/utils/Mascaras.js';
-import { horasAgendamento } from '../Formulario/utils/Horarios.js';
-import { collection, getDocs, addDoc, query, where, ref } from 'firebase/firestore/lite';
+import { horasAgendamento, horasCompletas, horasEntrada, horasSaida } from '../Formulario/utils/Horarios.js';
+import { collection, getDocs, addDoc } from 'firebase/firestore/lite';
 import { db } from 'db/agendamento';
 import { dataCortada } from './utils/Data';
-
-//
-
+import { TrendingUpRounded } from '@mui/icons-material';
 
 const Formulario = () => {
 
@@ -22,9 +20,14 @@ const Formulario = () => {
     const [horaInicial, setHoraInicial] = useState('');
     const [horaFinal, setHoraFinal] = useState('');
     const [agendamento, setAgendamento] = useState([]);
-    const [horasVagas, setHorasVagas] = useState(horasAgendamento)
 
-    const [filtro, setFiltro] = useState([]);
+    const [horasVagasInicial, setHorasVagasInicial] = useState(horasEntrada);
+    const [horasVagasFinal, setHorasVagasFinal] = useState(horasSaida);
+
+    const [horaInicialAgendada, setHoraInicialAgendada] = useState('')
+    const [horaFinalAgendada, setHoraFinalAgendada] = useState('')
+
+
 
     const useCollectionRef = collection(db, "agendamento")
 
@@ -35,38 +38,18 @@ const Formulario = () => {
             const filtroAgendamentosDoDia = todosAgendamentos.filter(filtrados => filtrados.data === data)
             setAgendamento(todosAgendamentos)
 
+            const hInicial = filtroAgendamentosDoDia.map(h => h.horaInicial)
+            setHoraInicialAgendada(hInicial)
+            const hFinal = filtroAgendamentosDoDia.map(h => h.horaFinal)
+            setHoraFinalAgendada(hFinal)
 
-            const horariosIniciaisDoDia = filtroAgendamentosDoDia.map(h => h.horaInicial)
-            const horariosFinaisDoDia = filtroAgendamentosDoDia.map(h => h.horaFinal)
-
-            console.log(horariosIniciaisDoDia);
-
-
-            const horariosDisponiveis = horasAgendamento.filter(h => h.disponivel === true)
-            console.log(horariosDisponiveis);
-            //setHorasVagas(horariosDisponiveis)
-
-
-
-
-
-
-
-            // dia 17: 07h as 10h
-            // horas iniciais nao permitidas: 07h/08h/09h
-            // horas finais nao permitidas: 07h/8h/09h/10h
-
-
-
-
-
-
-
-
+            // console.log(filtroAgendamentosDoDia);
+            // console.log(hInicial);
+            // console.log(hFinal);            
 
         };
         obterAgendamentos();
-    }, [data, horaInicial, horaFinal]);
+    }, [data]);
 
     const limpaCampos = () => {
         setNome('');
@@ -77,45 +60,66 @@ const Formulario = () => {
         setHoraInicial('');
         setHoraFinal('');
     }
-    //
-  
 
+    function verificaHorario(entrada, saida) {
 
+        const entradaNumber = Number(entrada);
+        const saidaNumber = Number(saida);
 
+        const arrayNumerosInicial = horaInicialAgendada.map(Number)
+        const arrayNumerosFinal = horaFinalAgendada.map(Number)    
+        
+        const horariosUsados = []
 
+        for (let i = 0; i < horaInicialAgendada.length; i++) {            
+            for (let j = arrayNumerosInicial[i]; j < arrayNumerosFinal[i]; j++) 
+            horariosUsados.push(j);
+        }
 
+        console.log(horariosUsados);
 
-
+        if (horariosUsados.includes(entradaNumber) || horariosUsados.includes(saidaNumber)) {
+            console.log(`Horario usado`);
+            return true
+        } else { // 
+            console.log('horario vago');
+            return false
+        }
+    }
 
     async function aoSalvar(e) {
         e.preventDefault();
         const horaInicialNumber = Number(horaInicial);
         const horaFinalNumber = Number(horaFinal);
 
-        const MENSAGEM_CONFIRMACAO = `Seu agendamento foi concluído com sucesso!
-            Sua visita está marcada para o dia ${data},
-            de ${horaInicial} às ${horaFinal}.`;
-
         if (horaInicialNumber === horaFinalNumber || horaFinalNumber < horaInicialNumber) {
             alert('Horário final não pode ser igual ou menor que horário inicial');
 
         } else {
-            console.log({ nome, email, telefone, instituicao, data, horaInicial, horaFinal });
+            // verificaHorario(horaInicial, horaFinal)
 
-            console.log(MENSAGEM_CONFIRMACAO);
-            const agend = await addDoc(useCollectionRef, {
-                nome,
-                email,
-                telefone,
-                instituicao,
-                data,
-                horaInicial,
-                horaFinal
-            })
+            if (verificaHorario(horaInicial, horaFinal)) { // true
+                alert(`Horário não disponível, vefique horários vagos na tabela no topo do site`);
 
-            limpaCampos();
-            alert(`Agendamento realizado com sucesso!`)
-            window.scrollTo(0, 0);
+            } else { // false 
+                console.log({ nome, email, telefone, instituicao, data, horaInicial, horaFinal });
+
+                const agend = await addDoc(useCollectionRef, {
+                    nome,
+                    email,
+                    telefone,
+                    instituicao,
+                    data,
+                    horaInicial,
+                    horaFinal
+                })
+
+                limpaCampos();
+                alert(`Agendamento realizado com sucesso!`)
+                window.scrollTo(0, 0);
+            }
+
+
         }
     }
 
@@ -173,13 +177,13 @@ const Formulario = () => {
 
                 <CampoHorario
                     label="Horário inicial"
-                    horarios={horasVagas}
+                    horarios={horasVagasInicial}
                     valor={horaInicial}
                     aoAlterado={valor => setHoraInicial(valor)}
                 />
                 <CampoHorario
                     label="Horário final"
-                    horarios={horasVagas}
+                    horarios={horasVagasFinal}
                     valor={horaFinal}
                     aoAlterado={valor => setHoraFinal(valor)}
                 />
