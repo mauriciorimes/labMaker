@@ -10,7 +10,7 @@
 
 .TabelaAdmin th {
     font-weight: bold;
-    background-color: var(--verde-medio);    
+    background-color: var(--medio);    
 }
 
 @media screen and (max-width: 950px) {

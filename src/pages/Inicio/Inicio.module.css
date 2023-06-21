@@ -11,7 +11,7 @@
     padding: 2em 5em;
     font-size: 28px;
     text-align: center;
-    color: var(--cinza);
+    color: var(--subtitulo-telainicio);
 }
 
 .container aside {
@@ -33,7 +33,7 @@
 }
 
 .container strong {
-    color: var(--verde-escuro);
+    color: var(--escuro);
 }
 
 .container section {

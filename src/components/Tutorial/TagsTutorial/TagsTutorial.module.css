@@ -6,7 +6,7 @@
 }
 
 .TagsTutorial li {
-    background-color: var(--verde-medio);
+    background-color: var(--medio);
     padding: 14px;
     border-radius: 20px;
     font-weight: bold;
@@ -16,7 +16,7 @@
 }
 
 .TagsTutorial li:hover {
-    color: var(--vermelho-mapa);
+    color: var(--geral-hover);
 }
 
 @media screen and (max-width: 1150px) {

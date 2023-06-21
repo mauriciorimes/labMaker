@@ -1,4 +1,4 @@
-import styles from './Foto.module.css';
+import styles from './Fotos.module.css';
 export default function Fotos({ fotos }) {
 
     return (

@@ -1,7 +1,7 @@
 .Fazer {
     width: 200px;
     height: 210px;
-    background-color: var(--verde-medio);
+    background-color: var(--medio);
     margin: 0.5em 0;
 }
 
@@ -23,6 +23,6 @@
     transform: scale(1.025);
     transition: 0.18s;
 
-    background-color: var(--verde-escuro);
-    color: var(--cinza-claro);
+    background-color: var(--escuro);
+    color: var(--texto-cardoquefazer-hover);
 }

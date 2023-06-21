@@ -1,6 +1,6 @@
-import styles from './Botao.module.css';
+import styles from './BotaoEnviar.module.css';
 
-export default function Botao({ children }) {
+export default function BotaoEnviar({ children }) {
     return(
         <button 
             className={styles.botao}

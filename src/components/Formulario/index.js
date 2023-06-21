@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Botao from './Botao';
 import CampoHorario from './CampoHorario';
 import CampoTexto from './CampoTexto';
 import styles from './Formulario.module.css';
@@ -8,6 +7,8 @@ import { horasEntrada, horasSaida } from '../Formulario/utils/Horarios.js';
 import { collection, getDocs, addDoc } from 'firebase/firestore/lite';
 import { db } from 'db/agendamento';
 import { dataCortada } from './utils/Data';
+import BotaoEnviar from './BotaoEnviar';
+
 
 const Formulario = () => {
 
@@ -174,9 +175,9 @@ const Formulario = () => {
                     aoAlterado={valor => setHoraFinal(valor)}
                 />
 
-                <Botao>
-                    Agendar
-                </Botao>
+                <BotaoEnviar>
+                    Enviar
+                </BotaoEnviar>
             </form>
         </section>
     )

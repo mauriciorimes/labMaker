@@ -1,22 +1,21 @@
 :root {
-	/* Cores do IFF */
-	--vermelho-mapa: #DF2E38;
-	--verde-claro: #DDF7E3;
-	--verde-medio: #C7E8CA;
-	--verde-escuro: #5D9C59;
+	--claro: #DDF7E3;
+	--medio: #C7E8CA;
+	--escuro: #5D9C59;
 
-	--cinza: #454545;
-	--branco: #FFFFFF;
-	--cinza-claro: #F0F0F0;
-
-		
-	--azul-linkedin: #0e76a8;
+	--geral-hover: red;
+	
+	--icone-mapa: #DF2E38;
+	--icone-linkedin: #0e76a8;
 
 	--botao-pesquisar: #99DBF5;
 	--botao-pesquisar-hover: #A7ECEE;	
 	--borda-pesquisar: #090580;
 
-	--seu-nome-id: #116A7B;
+	--seu-nome-id: #116A7B;	
+
+	--subtitulo-telainicio: #454545;	
+	--texto-cardoquefazer-hover: #F0F0F0;
 }
 
 *{
@@ -54,7 +53,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background-color: var(--verde-claro);
+	background-color: var(--claro);
 }
 ol, ul {
 	list-style: none;

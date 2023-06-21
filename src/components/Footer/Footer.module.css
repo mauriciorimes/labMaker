@@ -1,7 +1,7 @@
 .rodape {
     display: flex;
     justify-content: space-around;
-    background-color: var(--verde-escuro);
+    background-color: var(--escuro);
     padding: 1em;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
@@ -25,11 +25,11 @@
 }
 
 .location {
-    color: var(--vermelho-mapa);
+    color: var(--icone-mapa);
 }
 
 .linkedin {
-    color: #0e76a8;
+    color: var(--icone-linkedin);
 }
 
 @media screen and (max-width: 750px) {

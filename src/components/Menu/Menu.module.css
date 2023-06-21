@@ -1,7 +1,7 @@
 .Menu {
     display: flex;
     justify-content: space-between;
-    background-color: var(--verde-escuro);
+    background-color: var(--escuro);
     padding: 1em;
     align-items: center;
     font-family: 'Montserrat', sans-serif; 
@@ -15,7 +15,7 @@
 }
 
 .Menu h2 {
-    background-color: var(--vermelho-mapa);
+    background-color: var(--geral-hover);
     padding: 0.8em;
     border-radius: 25px;
     font-weight: bold;

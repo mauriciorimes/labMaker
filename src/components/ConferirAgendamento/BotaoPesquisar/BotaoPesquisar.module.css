@@ -1,10 +1,10 @@
-.BotaoPesquisarEmail {
+.BotaoPesquisar {
     background-color: var(--botao-pesquisar);
     border: 2px solid var(--borda-pesquisar);
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 0px 20px 20px 0px;    
 }
 
-.BotaoPesquisarEmail:hover {
+.BotaoPesquisar:hover {
     cursor: pointer;
     background-color: var(--botao-pesquisar-hover);
 }
