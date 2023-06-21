@@ -1,6 +1,6 @@
 import styles from './CardEquipamento.module.css';
 
-export default function CardEquipamento({ label, quantidade, imagem, descricao }) { 
+export default function ListaDeEquipamentos({ label, quantidade, imagem, descricao }) { 
     return (
         <section className={`${styles.CardEquipamento}`}>
             <img src={imagem} alt={label} />

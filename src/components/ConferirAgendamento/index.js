@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { db } from 'db/agendamento';
-import IdArte from 'components/IdArte';
-import styles from './IdVisitante.module.css';
-import BotaoPesquisarEmail from 'components/BotaoPesquisarEmail';
+import IdArte from 'components/ConferirAgendamento/IdArte';
+import styles from './ConferirAgendamento.module.css';
+import BotaoPesquisarEmail from 'components/ConferirAgendamento/BotaoPesquisarEmail';
 import SearchIcon from '@mui/icons-material/Search';
-import IdEmailNaoEncontrado from 'components/IdEmailNaoEncontrado';
+import IdEmailNaoEncontrado from 'components/ConferirAgendamento/IdEmailNaoEncontrado';
 
-export default function IdVisitante() {
+export default function ConferirAgendamento() {
     const [email, setEmail] = useState('');
     const [agendamento, setAgendamento] = useState([]);
     const [usuarioEncontrado, setUsusarioEncontrado] = useState([]);

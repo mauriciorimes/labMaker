@@ -1,5 +1,5 @@
 import styles from './Tags.module.css';
-import fotos from '../../components/TagsFotos/fotos.json';
+import fotos from './fotos.json';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 
 export default function Tags({ tags, filtrarFotos, setItens }) {

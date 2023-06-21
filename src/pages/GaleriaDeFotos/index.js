@@ -1,9 +1,9 @@
-import CardFoto from 'components/CardFoto';
 import styles from './GaleriaDeFotos.module.css';
-import Tags from 'components/TagsFotos';
-import fotos from '../../components/TagsFotos/fotos.json';
+import Tags from 'components/Fotos/TagsFotos';
+import fotos from '../../components/Fotos/TagsFotos/fotos.json';
 import { useState } from 'react';
 import NearMeIcon from '@mui/icons-material/NearMe';
+import Fotos from 'components/Fotos';
 
 export default function GaleriaDeFotos() {
     const [itens, setItens] = useState(fotos)
@@ -28,7 +28,7 @@ export default function GaleriaDeFotos() {
             <nav>
                 <Tags tags={tags} filtrarFotos={filtrarFotos} setItens={setItens} />
             </nav>
-            <CardFoto fotos={itens} />
+            <Fotos fotos={itens} />
         </section>
     )
 }

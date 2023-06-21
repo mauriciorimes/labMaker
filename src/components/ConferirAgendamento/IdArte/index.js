@@ -1,5 +1,5 @@
 import styles from './IdArte.module.css';
-import people from 'image/id/people.png';
+import people from '../../../image/id/people.png';
 
 export default function IdArte({ usuarioEncontrado, nome }) {
 

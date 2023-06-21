@@ -1,5 +1,5 @@
 import styles from './NenhumAgendamentoDoDia.module.css';
-import notCalendar from '../../image/id/not_calendar.png';
+import notCalendar from '../../../image/id/not_calendar.png';
 
 export default function NenhumAgendamentoDoDia({ dataDoDia }) {
 

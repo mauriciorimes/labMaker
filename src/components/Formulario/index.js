@@ -4,11 +4,10 @@ import CampoHorario from './CampoHorario';
 import CampoTexto from './CampoTexto';
 import styles from './Formulario.module.css';
 import { maskPhone } from '../Formulario/utils/Mascaras.js';
-import { horasAgendamento, horasCompletas, horasEntrada, horasSaida } from '../Formulario/utils/Horarios.js';
+import { horasEntrada, horasSaida } from '../Formulario/utils/Horarios.js';
 import { collection, getDocs, addDoc } from 'firebase/firestore/lite';
 import { db } from 'db/agendamento';
 import { dataCortada } from './utils/Data';
-import { TrendingUpRounded } from '@mui/icons-material';
 
 const Formulario = () => {
 
@@ -19,34 +18,21 @@ const Formulario = () => {
     const [data, setData] = useState('');
     const [horaInicial, setHoraInicial] = useState('');
     const [horaFinal, setHoraFinal] = useState('');
-    const [agendamento, setAgendamento] = useState([]);
+    const [horaInicialAgendada, setHoraInicialAgendada] = useState('');
+    const [horaFinalAgendada, setHoraFinalAgendada] = useState('');
 
-    const [horasVagasInicial, setHorasVagasInicial] = useState(horasEntrada);
-    const [horasVagasFinal, setHorasVagasFinal] = useState(horasSaida);
-
-    const [horaInicialAgendada, setHoraInicialAgendada] = useState('')
-    const [horaFinalAgendada, setHoraFinalAgendada] = useState('')
-
-
-
-    const useCollectionRef = collection(db, "agendamento")
+    const useCollectionRef = collection(db, "agendamento");
 
     useEffect(() => {
         const obterAgendamentos = async () => {
-            const dataBD = await getDocs(useCollectionRef)
-            const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-            const filtroAgendamentosDoDia = todosAgendamentos.filter(filtrados => filtrados.data === data)
-            setAgendamento(todosAgendamentos)
+            const dataBD = await getDocs(useCollectionRef);
+            const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+            const filtroAgendamentosDoDia = todosAgendamentos.filter(filtrados => filtrados.data === data);
+            const hInicial = filtroAgendamentosDoDia.map(h => h.horaInicial);            
+            const hFinal = filtroAgendamentosDoDia.map(h => h.horaFinal);
 
-            const hInicial = filtroAgendamentosDoDia.map(h => h.horaInicial)
-            setHoraInicialAgendada(hInicial)
-            const hFinal = filtroAgendamentosDoDia.map(h => h.horaFinal)
-            setHoraFinalAgendada(hFinal)
-
-            // console.log(filtroAgendamentosDoDia);
-            // console.log(hInicial);
-            // console.log(hFinal);            
-
+            setHoraInicialAgendada(hInicial);
+            setHoraFinalAgendada(hFinal);
         };
         obterAgendamentos();
     }, [data]);
@@ -66,10 +52,10 @@ const Formulario = () => {
         const entradaNumber = Number(entrada);
         const saidaNumber = Number(saida);
 
-        const arrayNumerosInicial = horaInicialAgendada.map(Number)
-        const arrayNumerosFinal = horaFinalAgendada.map(Number)    
+        const arrayNumerosInicial = horaInicialAgendada.map(Number);
+        const arrayNumerosFinal = horaFinalAgendada.map(Number);    
         
-        const horariosUsados = []
+        const horariosUsados = [];
 
         for (let i = 0; i < horaInicialAgendada.length; i++) {            
             for (let j = arrayNumerosInicial[i]; j <= arrayNumerosFinal[i]; j++) 
@@ -81,10 +67,10 @@ const Formulario = () => {
 
         if (horariosUsados.includes(entradaNumber) && horariosUsados.includes(saidaNumber)) {
             console.log(`Horario usado`);
-            return true
+            return true;
         } else { 
             console.log('horario vago');
-            return false
+            return false;
         }
     }
 
@@ -96,10 +82,9 @@ const Formulario = () => {
         if (horaInicialNumber === horaFinalNumber || horaFinalNumber < horaInicialNumber) {
             alert('Horário final não pode ser igual ou menor que horário inicial');
 
-        } else {
-            // verificaHorario(horaInicial, horaFinal)
+        } else {            
 
-            if (verificaHorario(horaInicial, horaFinal)) { // true
+            if (verificaHorario(horaInicial, horaFinal)) {
                 alert(`Horário não disponível, vefique horários vagos na tabela no topo do site`);
 
             } else { // false 
@@ -116,7 +101,7 @@ const Formulario = () => {
                 })
 
                 limpaCampos();
-                alert(`Agendamento realizado com sucesso!`)
+                alert(`Agendamento realizado com sucesso!`);
                 window.scrollTo(0, 0);
             }
 
@@ -178,13 +163,13 @@ const Formulario = () => {
 
                 <CampoHorario
                     label="Horário inicial"
-                    horarios={horasVagasInicial}
+                    horarios={horasEntrada}
                     valor={horaInicial}
                     aoAlterado={valor => setHoraInicial(valor)}
                 />
                 <CampoHorario
                     label="Horário final"
-                    horarios={horasVagasFinal}
+                    horarios={horasSaida}
                     valor={horaFinal}
                     aoAlterado={valor => setHoraFinal(valor)}
                 />

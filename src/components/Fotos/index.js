@@ -1,10 +1,8 @@
-import styles from './CardFoto.module.css';
-export default function CardFoto({ fotos }) {
+import styles from './Foto.module.css';
+export default function Fotos({ fotos }) {
 
     return (
-
         <ul className={styles.CardFoto}>
-
             {fotos.map(foto => (
                 <li key={fotos.titulo}>
                     <img src={foto.imagem} alt={foto.titulo} />
@@ -12,7 +10,6 @@ export default function CardFoto({ fotos }) {
                 </li>
             ))
             }
-
         </ul >
     )
 }

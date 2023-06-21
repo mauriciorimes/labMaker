@@ -2,11 +2,11 @@ import styles from './PraticasPedagogicas.module.css';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import TouchAppIcon from '@mui/icons-material/TouchApp';
-import TagsTutorial from 'components/TagsTutorial';
-import tutoriais from 'components/TagsTutorial/tutoriais.json';
+import tutoriais from 'components/Tutorial/TagsTutorial/tutoriais.json';
 import { useState } from 'react';
 import PdfDownloads from 'components/PdfDownloads';
 import Tutorial from 'components/Tutorial';
+import TagsTutorial from 'components/Tutorial/TagsTutorial';
 
 export default function PraticasPedagogicas() {
 

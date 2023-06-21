@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from './AdminProfessor.module.css';
-import AdminProfessorLogado from "components/AdminProfessor/AdminProfessorLogado";
-import AdminProfessorVisitante from "components/AdminVisitante";
+import AdminVisitante from "components/AdminVisitante";
+import AdminProfessorLogado from "components/AdminProfessorLogado";
 
 export default function AdminProfessor() {
 
@@ -28,7 +28,7 @@ export default function AdminProfessor() {
     return (
         <section className={styles.AdminProfessor}>
             {!autenticado ?
-                <AdminProfessorVisitante
+                <AdminVisitante
                     usuario={usuario}
                     setUsuario={setUsuario}
                     senha={senha}

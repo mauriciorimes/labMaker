@@ -1,6 +1,6 @@
 import CardOqueFazer from 'components/CardOqueFazer';
 import styles from './Inicio.module.css';
-import CardInicio from 'components/CardInicio';
+import Informativos from 'components/Informativos';
 import pessoas from 'image/inicio/pessoas.png';
 import robo from 'image/inicio/robo.png';
 import seguro from 'image/inicio/seguro.png';
@@ -32,7 +32,7 @@ export default function Inicio() {
                     <CardOqueFazer
                         primeiroIcone={<CalendarMonthIcon fontSize='large' />}
                         segundoIcone={<AccessTimeIcon fontSize='large' />}
-                        textoUm="Agendar"
+                        textoUm="Agendar,"
                         textoDois="uma visita!"
                     />
                 </Link>
@@ -41,7 +41,7 @@ export default function Inicio() {
                     <CardOqueFazer
                         primeiroIcone={<PrecisionManufacturingIcon fontSize='large' />}
                         segundoIcone={<ThreeDRotationIcon fontSize='large' />}
-                        textoUm="Conhecer"
+                        textoUm="Conhecer,"
                         textoDois="nossos equipamentos."
                     />
                 </Link>
@@ -50,7 +50,7 @@ export default function Inicio() {
                     <CardOqueFazer
                         primeiroIcone={<CameraAltIcon fontSize='large' />}
                         segundoIcone={<CollectionsIcon fontSize='large' />}
-                        textoUm="Explorar"
+                        textoUm="Explorar,"
                         textoDois="a galeria de fotos!"
                     />
                 </Link>
@@ -59,26 +59,26 @@ export default function Inicio() {
                     <CardOqueFazer
                         primeiroIcone={<LocalLibraryIcon fontSize='large' />}
                         segundoIcone={<FeedIcon fontSize='large' />}
-                        textoUm="Aprender"
+                        textoUm="Aprender,"
                         textoDois="com as práticas pedagógicas"
                     />
                 </Link>
             </aside>
 
             <section>
-                <CardInicio
+                <Informativos
                     imagem={pessoas}
                     alt="Diversidade de pessoas"
                     titulo="Para todos"
                     descricao="Não somente para alunos e servidores do Instituto. Mas para todos da comunidade!"
                 />
-                <CardInicio
+                <Informativos
                     imagem={robo}
                     alt="Braço de robô"
                     titulo="Aprenda fazendo"
                     descricao="Projetos práticos criam confiança, persistência e habilidades de resolução de problemas."
                 />
-                <CardInicio
+                <Informativos
                     imagem={seguro}
                     alt="Símbolo de segurança"
                     titulo="Ambiente seguro"
