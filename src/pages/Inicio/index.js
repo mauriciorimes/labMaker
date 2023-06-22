@@ -13,19 +13,20 @@ import CollectionsIcon from '@mui/icons-material/Collections';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import FeedIcon from '@mui/icons-material/Feed';
 import { Link } from 'react-router-dom';
+import TopoInicio from 'components/TopoInicio';
 
 export default function Inicio() {
     return (
-        <main className={styles.container}>
-            <h1> Laboratório Maker do Instituto Federal Fluminense - Campus Itaperuna </h1>
-
-            <article>
-                É um laboratório voltado ao desenvolvimento de projetos acadêmicos em geral.
-                Ele terá espaços para trabalho colaborativo, ferramentas diversas, impressoras 3D e
-                scanner 3D, além de outros materiais que poderão ser utilizados nas atividades.
-            </article>
-
-            <h2> <strong>Veja</strong> o que você pode fazer em nosso site: </h2>
+        <main className={styles.Inicio}>
+            <TopoInicio
+                titulo="Laboratório Maker do Instituto Federal Fluminense - Campus Itaperuna" 
+                subtitulo="É um laboratório voltado ao desenvolvimento de projetos acadêmicos em geral.
+                    Ele terá espaços para trabalho colaborativo, ferramentas diversas, impressoras 3D e
+                    scanner 3D, além de outros materiais que poderão ser utilizados nas atividades."
+                strong="Veja"
+                explicacao="o que você pode fazer em nosso site:"           
+            
+            />
 
             <aside>
                 <Link to="/agendamento">
@@ -85,7 +86,6 @@ export default function Inicio() {
                     descricao="Todas visitas são supervisionadas por instrutores, para auxiliar nas atividades."
                 />
             </section>
-
         </main>
     )
 }

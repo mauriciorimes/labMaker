@@ -22,7 +22,7 @@ function AppRoutes() {
         <Route path="/admin-agendamento" element={<AdminAgendamentos />} />
         <Route path="/admin-professor" element={<AdminPraticasPedagogicas />} />
       </Routes>
-      <Footer />    
+      <Footer />
     </BrowserRouter>
   );
 }

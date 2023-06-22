@@ -1,68 +1,23 @@
-.container {
+.Inicio {
     padding: 3em 0;
 }
 
-.container h1 {
-    text-align: center;
-    font-size: 36px;
-}
-
-.container article {
-    padding: 2em 5em;
-    font-size: 28px;
-    text-align: center;
-    color: var(--subtitulo-telainicio);
-}
-
-.container aside {
+.Inicio aside {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 3.5em 0;
 }
 
-.container aside a {
+.Inicio aside a {
     text-decoration: none;
     color: #000000;
     font-weight: bold;
 }
 
-.container h2 {
-    text-align: center;
-    font-size: 32px;
-}
-
-.container strong {
-    color: var(--escuro);
-}
-
-.container section {
+.Inicio section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 1.5em;
-}
-
-@media screen and (max-width: 1200px) {
-    .container h1 {
-        font-size: 26px;
-    }
-
-    .container article {
-        font-size: 24px;
-        padding: 1.8em 2em;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .container h1 {
-        font-size: 26px;
-    }
-
-    .container article {
-        font-size: 16px;
-        padding: 1.8em 1.25em;
-
-
-    }
 }
