@@ -59,14 +59,14 @@ const Formulario = () => {
         const horariosUsados = [];
 
         for (let i = 0; i < horaInicialAgendada.length; i++) {            
-            for (let j = arrayNumerosInicial[i]; j <= arrayNumerosFinal[i]; j++) 
+            for (let j = arrayNumerosInicial[i]; j < arrayNumerosFinal[i]; j++) 
             horariosUsados.push(j);
         }
 
         console.log(horariosUsados);
         
 
-        if (horariosUsados.includes(entradaNumber) && horariosUsados.includes(saidaNumber)) {
+        if (horariosUsados.includes(entradaNumber) || horariosUsados.includes(saidaNumber) ) {
             console.log(`Horario usado`);
             return true;
         } else { 
