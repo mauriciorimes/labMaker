@@ -28,7 +28,7 @@ const Formulario = () => {
             const dataBD = await getDocs(useCollectionRef);
             const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
             const filtroAgendamentosDoDia = todosAgendamentos.filter(filtrados => filtrados.data === data);
-            const hInicial = filtroAgendamentosDoDia.map(h => h.horaInicial);            
+            const hInicial = filtroAgendamentosDoDia.map(h => h.horaInicial);
             const hFinal = filtroAgendamentosDoDia.map(h => h.horaFinal);
 
             setHoraInicialAgendada(hInicial);
@@ -53,60 +53,70 @@ const Formulario = () => {
         const saidaNumber = Number(saida);
 
         const arrayNumerosInicial = horaInicialAgendada.map(Number);
-        const arrayNumerosFinal = horaFinalAgendada.map(Number);    
-        
+        const arrayNumerosFinal = horaFinalAgendada.map(Number);
+
         const horariosUsados = [];
 
-        for (let i = 0; i < horaInicialAgendada.length; i++) {            
-            for (let j = arrayNumerosInicial[i]; j < arrayNumerosFinal[i]; j++) 
-            horariosUsados.push(j);
+        for (let i = 0; i < horaInicialAgendada.length; i++) {
+            for (let j = arrayNumerosInicial[i]; j < arrayNumerosFinal[i]; j++)
+                horariosUsados.push(j);
         }
-
         console.log(horariosUsados);
-        
 
-        if (horariosUsados.includes(entradaNumber) || horariosUsados.includes(saidaNumber) ) {
+        if (horariosUsados.includes(entradaNumber) || horariosUsados.includes(saidaNumber)) {
             console.log(`Horario usado`);
             return true;
-        } else { 
+        } else {
             console.log('horario vago');
             return false;
         }
     }
+    // 5 e 6 sabado e domingo
+
 
     async function aoSalvar(e) {
         e.preventDefault();
         const horaInicialNumber = Number(horaInicial);
         const horaFinalNumber = Number(horaFinal);
 
-        if (horaInicialNumber === horaFinalNumber || horaFinalNumber < horaInicialNumber) {
-            alert('Horário final não pode ser igual ou menor que horário inicial');
+        const diaDaSemana = new Date(data);
+        console.log(diaDaSemana);
+        console.log(diaDaSemana.getDay());
 
-        } else {            
+        if (diaDaSemana.getDay() === 5 || diaDaSemana.getDay() === 6) {
+            alert(`Não é possível agendar nos finais de semana!`)
+        } else {
+            if (horaInicialNumber === horaFinalNumber || horaFinalNumber < horaInicialNumber) {
+                alert('Horário final não pode ser igual ou menor que horário inicial');
+            } else {
 
-            if (verificaHorario(horaInicial, horaFinal)) {
-                alert(`Horário não disponível, vefique horários vagos na tabela no topo do site`);
+                if (verificaHorario(horaInicial, horaFinal)) {
+                    alert(`Horário não disponível, vefique horários vagos na tabela no topo do site`);
 
-            } else { // false 
-                console.log({ nome, email, telefone, instituicao, data, horaInicial, horaFinal });
+                } else { // false 
+                    console.log({ nome, email, telefone, instituicao, data, horaInicial, horaFinal });
 
-                const agend = await addDoc(useCollectionRef, {
-                    nome,
-                    email,
-                    telefone,
-                    instituicao,
-                    data,
-                    horaInicial,
-                    horaFinal
-                })
-                
-                limpaCampos();
-                alert(`Agendamento realizado com sucesso!`);
-                window.scrollTo(0, 0);
-                e.target.reset();
+                    const agend = await addDoc(useCollectionRef, {
+                        nome,
+                        email,
+                        telefone,
+                        instituicao,
+                        data,
+                        horaInicial,
+                        horaFinal
+                    })
+
+                    limpaCampos();
+                    alert(`Agendamento realizado com sucesso!`);
+                    window.scrollTo(0, 0);
+                    e.target.reset();
+                }
+
             }
 
         }
+
+
     }
 
     return (
