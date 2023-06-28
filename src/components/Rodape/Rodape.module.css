@@ -1,4 +1,4 @@
-.rodape {
+.Rodape {
     display: flex;
     justify-content: space-around;
     background-color: var(--escuro);
@@ -9,19 +9,31 @@
     /* width: 100%; */
 }
 
-.rodape ul {
+.Rodape ul {
     display: flex;
     align-items: center;
 }
 
-.rodape div {
+.Rodape ul li {
+    color: white;
+}
+
+.IconeEndereco {
+    color: var(--icone-endereco);
+}
+
+.IconeTelefone {
+    color: var(--icone-telefone);
+}
+
+.Rodape div {
     display: flex;
     align-items: center;
 }
 
-.rodape a {
+.Rodape a {
     text-decoration: none;
-    color: #000000;
+    color: white;
 }
 
 .location {
@@ -33,10 +45,10 @@
 }
 
 @media screen and (max-width: 750px) {
-    .rodape {
+    .Rodape {
         flex-direction: column;        
     }
-    .rodape ul {        
+    .Rodape ul {        
         padding: 5px 0;
     }     
 }

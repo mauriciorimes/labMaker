@@ -4,11 +4,14 @@
     align-items: center;
     padding-top: 3em;
     gap: 1em;
+    
 }
 
 .AgendamentosDoDia h2 {
-    font-size: 26px;
-    font-weight: 300;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--escuro);    
+    text-align: center;
 }
 
 .AgendamentosDoDia div {
@@ -16,7 +19,8 @@
 }
 
 .AgendamentosDoDia div label {
-    font-size: 22px;
+    font-size: 30px; 
+    color: var(--escuro);     
 }
 
 .AgendamentosDoDia div input {

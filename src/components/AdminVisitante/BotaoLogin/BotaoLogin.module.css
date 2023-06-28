@@ -1,15 +1,16 @@
 .BotaoLogin {
-    background-color: var(--verde-escuro);
+    background-color: var(--detalhes-e-hover);
     border-radius: 10px;
     font-weight: 700;
     font-size: 18px;
     padding: 12px;
     border: none;
     cursor: pointer;
-    color: #FFFFFF;
+    color: var(--padrao);
     margin: 10px 0;    
 }
 
 .BotaoLogin:hover {
-    color: var(--vermelho-mapa);
+    background-color: var(--escuro);
+    color: var(--detalhes-e-hover);
 }

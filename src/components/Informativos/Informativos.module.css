@@ -1,4 +1,4 @@
-.CardInicio { 
+.Informativos { 
     display: flex;   
     flex-direction: column;    
     justify-content: space-around;
@@ -8,20 +8,22 @@
     box-sizing: border-box;
 }
 
-.CardInicio img {
+.Informativos img {
     width: 100%;
     max-width: 100%;
     height: auto;     
 }
 
-.CardInicio h2 {
+.Informativos h2 {
     margin-top: 1em;
     margin-bottom: 0.5em;
     font-weight: bold;
     text-align: center;
+    color: var(--escuro);
     
 }
 
-.CardInicio p {
+.Informativos p {
     text-align: center;
+    color: var(--escuro);
 }

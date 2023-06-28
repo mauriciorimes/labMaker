@@ -16,8 +16,8 @@ export default function AdminProfessorLogado() {
         const file = event.target[0]?.files[0];
         if (!file) return
 
-        const storageRef = ref(storage, `pdfs/${file.name}`)
-        const uploadTask = uploadBytesResumable(storageRef, file)
+        const storageRef = ref(storage, `pdfs/${file.name}`);
+        const uploadTask = uploadBytesResumable(storageRef, file);
 
         uploadTask.on(
             "state_changed",
@@ -26,11 +26,11 @@ export default function AdminProfessorLogado() {
                 setProgress(Calcprogress.toFixed(0))                                
             },
             error => {
-                alert(error)
+                alert(error);
             },
             () => {
                 getDownloadURL(uploadTask.snapshot.ref).then(url => {
-                    setPdf(url)
+                    setPdf(url);
                     alert(`Arquivo enviado com sucesso!`);
                 })                
             }
@@ -47,7 +47,7 @@ export default function AdminProfessorLogado() {
                 </BotaoUpload>                              
             </form>
             <br />
-            <h3> Status do carregamento {progress}%</h3>
+            <h3> Status do carregamento <strong> {progress}% </strong></h3>
             <br />                  
         </section>
     )

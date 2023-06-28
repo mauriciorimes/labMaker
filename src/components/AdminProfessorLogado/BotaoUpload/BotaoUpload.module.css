@@ -1,5 +1,5 @@
 .BotaoUpload {
-    background-color: var(--escuro);
+    background-color: var(--detalhes-e-hover);
     border-radius: 10px;
     font-weight: 700;
     font-size: 18px;
@@ -11,5 +11,6 @@
 }
 
 .BotaoUpload:hover {
-    color: var(--vermelho-mapa);
+    color: var(--detalhes-e-hover);
+    background-color: var(--escuro);
 }

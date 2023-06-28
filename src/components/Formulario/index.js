@@ -9,7 +9,6 @@ import { db } from 'db/agendamento';
 import { dataCortada } from './utils/Data';
 import BotaoEnviar from './BotaoEnviar';
 
-
 const Formulario = () => {
 
     const [nome, setNome] = useState('');
@@ -17,8 +16,8 @@ const Formulario = () => {
     const [telefone, setTelefone] = useState('');
     const [instituicao, setInstituicao] = useState('');
     const [data, setData] = useState('');
-    const [horaInicial, setHoraInicial] = useState('');
-    const [horaFinal, setHoraFinal] = useState('');
+    const [horaInicial, setHoraInicial] = useState(7);
+    const [horaFinal, setHoraFinal] = useState(8);
     const [horaInicialAgendada, setHoraInicialAgendada] = useState('');
     const [horaFinalAgendada, setHoraFinalAgendada] = useState('');
 
@@ -44,8 +43,8 @@ const Formulario = () => {
         setTelefone('');
         setInstituicao('');
         setData('');
-        setHoraInicial('');
-        setHoraFinal('');
+        setHoraInicial(7);
+        setHoraFinal(8);
     }
 
     function verificaHorario(entrada, saida) {
@@ -100,12 +99,12 @@ const Formulario = () => {
                     horaInicial,
                     horaFinal
                 })
-
+                
                 limpaCampos();
                 alert(`Agendamento realizado com sucesso!`);
                 window.scrollTo(0, 0);
+                e.target.reset();
             }
-
 
         }
     }
@@ -161,7 +160,6 @@ const Formulario = () => {
                     aoAlterado={valor => setData(valor)}
                     min={dataCortada}
                 />
-
                 <CampoHorario
                     label="Horário inicial"
                     horarios={horasEntrada}

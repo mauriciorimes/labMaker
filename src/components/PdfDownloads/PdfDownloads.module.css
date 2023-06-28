@@ -5,12 +5,19 @@
 .Conhecimento ul li {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;   
+    color: var(--escuro); 
+    font-size: 20px; 
 }
+
+/* .Icone {
+    color: var(--escuro);
+} */
+
 
 .Conhecimento ul li:hover {
     cursor: pointer;
-    color: var(--vermelho-mapa);
+    color: var(--detalhes-e-hover);
 }
 
 .Conhecimento ul li label:hover {

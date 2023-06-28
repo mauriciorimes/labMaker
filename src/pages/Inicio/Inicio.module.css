@@ -11,7 +11,7 @@
 
 .Inicio aside a {
     text-decoration: none;
-    color: #000000;
+    color: var(--escuro);
     font-weight: bold;
 }
 

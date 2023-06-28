@@ -1,12 +1,21 @@
-.galeria ul {
+.Galeria ul {
     display: flex;    
     justify-content: center;
     padding: 2em 0;
+    gap: 1em;    
 }
 
-.galeria li {
-    display: flex;       
+.Galeria ul li {
+    display: flex;        
+}
+
+.Icone {
+    color: var(--detalhes-e-hover);
+}
+
+.Galeria ul li h2 {
+    color: var(--escuro);
     font-size: 28px;
-    font-weight: 300;   
+    font-weight: bold;   
     align-items: center; 
 }

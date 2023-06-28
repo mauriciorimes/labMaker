@@ -1,14 +1,13 @@
 .link {
     text-decoration: none;      
     font-weight: bold; 
-    color: black;    
+    color: var(--padrao);    
 }
 
-.linkDestacado {
-    text-decoration: underline;
-    text-decoration-color: var(--geral-hover);     
+.linkDestacado {    
+    color: var(--detalhes-e-hover);    
 }
 
 .link:hover {
-    color: var(--geral-hover);
+    color: var(--detalhes-e-hover);
 }

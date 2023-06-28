@@ -1,37 +1,38 @@
-.CardFoto {
+.Fotos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 2em;
 }
 
-.CardFoto li {
+.Fotos li {
     list-style: none;
     display: flex;
     flex-direction: column;
     width: 300px;
     height: 320px;
     background-color: var(--medio);
-    border-radius: 15px;      
+    border-radius: 15px;    
 }
 
-.CardFoto img {
+.Fotos img {
     border-radius: 15px 15px 0 0;
     width: 100%;
-    height: 90%;
+    height: 94%;
     cursor: pointer;  
 }
 
-.CardFoto p {
-    font-size: 16px;
-    padding: 0.3em;    
+.Fotos li p {
+    font-size: 16px;   
+    text-align: center;    
+    margin: auto 0;  
 }
 
 .containerRotulo {
     background-color: blue;
 }
 
-.CardFoto li:hover {
+.Fotos li:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
@@ -43,7 +44,7 @@
 }
 
 @media screen and (max-width: 550px) {
-    .CardFoto li:hover {
+    .Fotos li:hover {
         padding: 0.5em 0.5em 0em;
     }  
 }

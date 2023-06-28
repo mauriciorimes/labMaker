@@ -34,8 +34,8 @@ export default function TabelaAdmin({ dados }) {
                         <td> {agendamentos.email} </td>
                         <td> {agendamentos.telefone} </td>
                         <td> {agendamentos.instituicao} </td>
-                        <td> {agendamentos.horaInicial} </td>
-                        <td> {agendamentos.horaFinal} </td>                        
+                        <td> {agendamentos.horaInicial}:00 </td>
+                        <td> {agendamentos.horaFinal}:00 </td>                        
                     </tr>
                 </tbody>
             ))}

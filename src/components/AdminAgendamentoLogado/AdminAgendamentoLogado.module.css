@@ -2,9 +2,9 @@
     padding: 0 1em;    
 }
 
-
 .AdminAgendamentoLogado h2 {
     font-size: 32px;
+    color: var(--escuro);
 }
 
 .AdminAgendamentoLogado div {
@@ -13,6 +13,7 @@
 
 .AdminAgendamentoLogado div label, .AdminAgendamentoLogado div input {
     font-size: 26px;
+    color: var(--escuro);
 }
 
 .AdminAgendamentoLogado div input {

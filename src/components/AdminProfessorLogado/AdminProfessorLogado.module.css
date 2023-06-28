@@ -1,5 +1,7 @@
 .AdminProfessorLogado h2 {
     font-size: 32px;
+    color: var(--escuro);
+    font-weight: bold;
 }
 
 .AdminProfessorLogado form {
@@ -15,6 +17,11 @@
 }
 
 .AdminProfessorLogado h3 {
-    font-size: 18px;
+    font-size: 22px;
+    color: var(--escuro);
+}
+
+.AdminProfessorLogado strong {
+    color: var(--detalhes-e-hover);
 }
 

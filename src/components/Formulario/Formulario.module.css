@@ -15,7 +15,8 @@
 
 .formulario h2 {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: bold;    
+    padding-bottom: 0.5em;
 }
 
 .telefone {

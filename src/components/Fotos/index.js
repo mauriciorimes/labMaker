@@ -1,8 +1,8 @@
 import styles from './Fotos.module.css';
-export default function Fotos({ fotos }) {
 
+export default function Fotos({ fotos }) {
     return (
-        <ul className={styles.CardFoto}>
+        <ul className={styles.Fotos}>
             {fotos.map(foto => (
                 <li key={fotos.titulo}>
                     <img src={foto.imagem} alt={foto.titulo} />

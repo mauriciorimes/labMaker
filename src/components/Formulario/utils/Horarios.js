@@ -1,5 +1,4 @@
-export const horasEntrada = [
-    "Escolha seu horário",
+export const horasEntrada = [    
     7,
     8,
     9,
@@ -17,8 +16,7 @@ export const horasEntrada = [
     21
 ]
 
-export const horasSaida = [
-    "Escolha seu horário",
+export const horasSaida = [    
     8,
     9,
     10,

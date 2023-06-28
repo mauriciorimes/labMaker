@@ -7,8 +7,14 @@
     justify-content: center;    
 }
 
+.Icone {
+    color: var(--detalhes-e-hover);    
+}
+
 .Praticas div h2 {
-    font-size: 28px;
+    font-size: 32px;
+    color: var(--escuro);
+    font-weight: bold;
 }
 
 .Praticas nav {
@@ -23,6 +29,7 @@
 }
 
 .Praticas nav ul li h3 {
-    font-size: 24px;
+    font-size: 28px;
+    color: var(--escuro);
 }
 

@@ -51,7 +51,7 @@ export default function PdfDownloads() {
             <ul>
                 {caminhoPdf.map(pdf => (
                     <li onClick={() => pegaCaminho(pdf)}> 
-                        <FileDownloadIcon fontSize="large"/>
+                        <FileDownloadIcon fontSize="large" className={styles.Icone}/>
                         <label > {pdf.slice(5).slice(0, -4)} </label>
                     </li>
                 ))}

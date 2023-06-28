@@ -16,7 +16,7 @@
 }
 
 .TagsTutorial li:hover {
-    color: var(--geral-hover);
+    color: var(--detalhes-e-hover);
 }
 
 @media screen and (max-width: 1150px) {

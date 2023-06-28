@@ -25,7 +25,7 @@ export default function AgendamentosDoDia() {
 
     return (
         <section className={styles.AgendamentosDoDia}>
-            <h2> Verifique os agendamentos do dia </h2>
+            <h2> Verifique os agendamentos do dia. </h2>
             <div>
                 <label> Selecione uma data para ver os agendamentos do dia: </label>
                 <input

@@ -1,21 +1,19 @@
 .TopoInicio h1 {
     text-align: center;
     font-size: 36px;
+    color: var(--escuro);
 }
 
 .TopoInicio article {
     padding: 1.1em 5em;
     font-size: 28px;
     text-align: center;
-    color: var(--subtitulo-telainicio);
+    color: var(--escuro);
 }
 
 .TopoInicio h2 {
     text-align: center;
     font-size: 32px;
-}
-
-.TopoInicio strong {
     color: var(--escuro);
 }
 

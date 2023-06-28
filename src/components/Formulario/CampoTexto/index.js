@@ -7,7 +7,7 @@ function CampoTexto({ label, placeholder, type, obrigatorio, minlength, valor, a
     }    
     
     return (
-        <div className={styles.campoTexto}>
+        <div className={styles.CampoTexto}>
             <label htmlFor={label}> {label} </label>
             <input                
                 onChange={aoDigitado}

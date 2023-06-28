@@ -1,21 +1,22 @@
-.campoTexto {
+.CampoTexto {
     margin: 24px 0;
 }
 
-.campoTexto label {
+.CampoTexto label {
     display: block;
     margin-bottom: 8px;
     font-size: 24px;
 }
 
-.campoTexto input {
-    background-color: #FFFFFF;
+.CampoTexto input {
+    background-color: var(--padrao);
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
     border: none;
     width: 100%;
     font-size: 24px;
     padding: 24px;
     box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 20px;    
 }
+
 

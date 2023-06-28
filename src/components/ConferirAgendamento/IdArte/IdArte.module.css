@@ -1,6 +1,8 @@
 .IdArte {
-    background: url('../../../image/id/background.jpg') no-repeat right top;
-    background-size: cover;
+    /* background: url('../../../image/id/background.jpg') no-repeat right top;
+    background-size: cover; */
+
+    background-color: var(--escuro);
     
     width: 300px;
     height: auto;
@@ -28,7 +30,7 @@
     font-weight: 400;
     font-size: 26px;
     text-align: center;
-    color: var(--seu-nome-id);
+    color: var(--detalhes-e-hover);
     padding-bottom: 0.2em;
 }
 
@@ -40,4 +42,12 @@
 
 .IdArte div ul li {
     margin-bottom: 0.7em;    
+}
+
+.IdArte:hover {
+    box-shadow: var(--detalhes-e-hover) 0px 25px 50px -12px;
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.025);
+    transition: 0.18s;
 }

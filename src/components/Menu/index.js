@@ -5,11 +5,14 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import { Link } from 'react-router-dom';
 
 export default function Menu() {
     return (
         <nav className={styles.Menu}>
-            <h2> LabMaker </h2>
+            <Link to="/" className={styles.Logo}>
+                <h2> LabMaker </h2>
+            </Link>
 
             <section>
                 <MenuLink rota="/">

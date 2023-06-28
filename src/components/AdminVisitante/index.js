@@ -9,11 +9,11 @@ export default function AdminVisitante({ usuario, setUsuario, senha, setSenha, l
             <h2> Insira o usuário e senha para proseguir: </h2>
             <form onSubmit={login}>
                 <div>
-                    <AccountCircleIcon fontSize='large'/>                    
+                    <AccountCircleIcon fontSize='large' className={styles.Icone}/>                    
                     <input value={usuario} onChange={(e) => setUsuario(e.target.value)} />
                 </div>
                 <div>
-                    <LockIcon fontSize='large'/>                    
+                    <LockIcon fontSize='large' className={styles.Icone}/>                    
                     <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
                 </div>
 

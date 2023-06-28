@@ -23,13 +23,13 @@ export default function PraticasPedagogicas() {
     return (
         <section className={styles.Praticas}>
             <div>
-                <PsychologyIcon fontSize='large' />
+                <PsychologyIcon fontSize='large' className={styles.Icone} />
                 <h2> Aulas práticas </h2>
             </div>
             <nav>
                 <ul>
                     <li>
-                        <TouchAppIcon fontSize='medium' />
+                        <TouchAppIcon fontSize='medium' className={styles.Icone} />
                         <h3> Clique para baixar um aula: </h3>
                     </li>
                 </ul>                
@@ -37,13 +37,13 @@ export default function PraticasPedagogicas() {
             <PdfDownloads />
 
             <div>
-                <AutoStoriesIcon fontSize='large' />
+                <AutoStoriesIcon fontSize='large' className={styles.Icone} />
                 <h2> Tutoriais </h2>
             </div>
             <nav>
                 <ul>
                     <li>
-                        <TouchAppIcon fontSize='medium' />
+                        <TouchAppIcon fontSize='medium' className={styles.Icone} />
                         <h3> Escolha um equipamento: </h3>
                     </li>
                 </ul>

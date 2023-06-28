@@ -22,10 +22,8 @@ export default function Inicio() {
                 titulo="Laboratório Maker do Instituto Federal Fluminense - Campus Itaperuna" 
                 subtitulo="É um laboratório voltado ao desenvolvimento de projetos acadêmicos em geral.
                     Ele terá espaços para trabalho colaborativo, ferramentas diversas, impressoras 3D e
-                    scanner 3D, além de outros materiais que poderão ser utilizados nas atividades."
-                strong="Veja"
-                explicacao="o que você pode fazer em nosso site:"           
-            
+                    scanner 3D, além de outros materiais que poderão ser utilizados nas atividades."                
+                explicacao="Veja o que você pode fazer em nosso site:"             
             />
 
             <aside>
@@ -47,7 +45,7 @@ export default function Inicio() {
                     />
                 </Link>
 
-                <Link to="/galeria">
+                <Link to="/galeria-de-fotos">
                     <CardOqueFazer
                         primeiroIcone={<CameraAltIcon fontSize='large' />}
                         segundoIcone={<CollectionsIcon fontSize='large' />}
@@ -56,7 +54,7 @@ export default function Inicio() {
                     />
                 </Link>
 
-                <Link to="/praticas">
+                <Link to="/praticas-pedagogicas">
                     <CardOqueFazer
                         primeiroIcone={<LocalLibraryIcon fontSize='large' />}
                         segundoIcone={<FeedIcon fontSize='large' />}

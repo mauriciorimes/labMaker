@@ -2,7 +2,7 @@ import styles from './Tutorial.module.css';
 
 export default function Tutorial({ itens }) {
     return (
-        <ul className={styles.CardTutorial}>
+        <ul className={styles.Tutorial}>
             {itens.map(tutorial => (
                 <li key={tutorial.id}>
                     <label> {tutorial.titulo} </label>

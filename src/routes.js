@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Footer from "./components/Footer";
+
 import Menu from "./components/Menu";
 import Agendamento from "./pages/Agendamento";
 import Equipamentos from "./pages/Equipamentos";
@@ -8,6 +8,7 @@ import Inicio from "./pages/Inicio";
 import PraticasPedagogicas from "./pages/PraticasPedagogicas";
 import AdminAgendamentos from "pages/AdminAgendamento";
 import AdminPraticasPedagogicas from "pages/AdminProfessor";
+import Rodape from "components/Rodape";
 
 function AppRoutes() {
   return (
@@ -22,7 +23,7 @@ function AppRoutes() {
         <Route path="/admin-agendamento" element={<AdminAgendamentos />} />
         <Route path="/admin-professor" element={<AdminPraticasPedagogicas />} />
       </Routes>
-      <Footer />
+      <Rodape />
     </BrowserRouter>
   );
 }

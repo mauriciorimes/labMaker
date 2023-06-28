@@ -9,13 +9,18 @@
     box-sizing: border-box;
 }
 
+.Logo {
+    text-decoration: none;
+}
+
 .Menu img {
     width: 20px;
     height: 20px;
 }
 
 .Menu h2 {
-    background-color: var(--geral-hover);
+    background-color: var(--detalhes-e-hover);
+    color: var(--escuro);
     padding: 0.8em;
     border-radius: 25px;
     font-weight: bold;

@@ -1,10 +1,12 @@
 .BotaoPesquisar {
-    background-color: var(--botao-pesquisar);
-    border: 2px solid var(--borda-pesquisar);
+    background-color: var(--detalhes-e-hover);
+    border: 2px solid var(--escuro);
     border-radius: 0px 20px 20px 0px;    
+    color: var(--escuro);
 }
 
 .BotaoPesquisar:hover {
     cursor: pointer;
-    background-color: var(--botao-pesquisar-hover);
+    background-color: var(--escuro);
+    color: var(--padrao);
 }
