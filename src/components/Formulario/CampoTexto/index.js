@@ -3,7 +3,7 @@ import styles from './CampoTexto.module.css';
 function CampoTexto({ label, placeholder, type, obrigatorio, minlength, valor, aoAlterado, min })  {     
     
     const aoDigitado = (e) => {
-        aoAlterado(e.target.value)
+        aoAlterado(e.target.value);
     }    
     
     return (

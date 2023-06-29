@@ -8,14 +8,14 @@ export default function FiltroTags({ tags, filtrarFotos, setItens }) {
             <ul>
                 <li>
                     <FilterAltIcon fontSize='large' className={styles.Icone}/>
-                    <p>Filtre por tags:</p>
+                    <p> Filtre por tags: </p>
                 </li>
             </ul>
             <ul className={styles.Categorias}>
                 {tags.map(tag => (
                     <li onClick={() => filtrarFotos(tag)} key={tag}> {tag} </li>
                 ))}
-                <li onClick={() => setItens(fotos)}>Todos</li>
+                <li onClick={() => setItens(fotos)}> Todos </li>
             </ul>
         </div>
     )

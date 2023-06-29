@@ -11,34 +11,29 @@ export default function ConferirAgendamento() {
     const [email, setEmail] = useState('');
     const [agendamento, setAgendamento] = useState([]);
     const [usuarioEncontrado, setUsusarioEncontrado] = useState([]);
-    const [autenticado, setAutenticado] = useState(false)
+    const [autenticado, setAutenticado] = useState(false);
+    const [nomeEnviado, setNomeEnviado] = useState([]);
 
-    const [nomeEnviado, setNomeEnviado] = useState([])
-
-    const useCollectionRef = collection(db, "agendamento")
+    const useCollectionRef = collection(db, "agendamento");
 
     useEffect(() => {
         const obterAgendamentos = async () => {
-            const dataBD = await getDocs(useCollectionRef)
+            const dataBD = await getDocs(useCollectionRef);
             const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-            setAgendamento(todosAgendamentos)
+            setAgendamento(todosAgendamentos);
         }
         obterAgendamentos();
-    }, [email])
+    }, [email]);
 
     function pesquisarPorEmail() {
-        const filtradoPorEmail = agendamento.filter(encontrado => encontrado.email === email)
-        const nomeEnviar = [...new Set(filtradoPorEmail.map(nome => nome.nome))]
-        setNomeEnviado(nomeEnviar)
+        const filtradoPorEmail = agendamento.filter(encontrado => encontrado.email === email);
+        const nomeEnviar = [...new Set(filtradoPorEmail.map(nome => nome.nome))];
+        setNomeEnviado(nomeEnviar);
 
         if (filtradoPorEmail.length > 0) {
-            setAutenticado(false)
-            console.log(`Encontrado`);
-            console.log(nomeEnviar.length);
-            // console.log(filtradoPorEmail);                 
+            setAutenticado(false);                            
             setUsusarioEncontrado(filtradoPorEmail);
-
-        } else setAutenticado(true)
+        } else setAutenticado(true);
     }
 
     return (
@@ -51,7 +46,6 @@ export default function ConferirAgendamento() {
                     <BotaoPesquisarEmail funcao={pesquisarPorEmail}>
                         <SearchIcon />
                     </BotaoPesquisarEmail>
-
                 </div>
             </nav>
             {!autenticado ? <IdArte usuarioEncontrado={usuarioEncontrado} nome={nomeEnviado} /> : <IdEmailNaoEncontrado />}

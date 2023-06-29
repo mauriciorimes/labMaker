@@ -7,17 +7,16 @@ import TabelaAdmin from "./TabelaAdmin";
 export default function AdminAgendamentoLogado() {
 
     const [adminAgendamento, setAdminAgendamento] = useState([]);
-    const [adminData, setAdminData] = useState('')
+    const [adminData, setAdminData] = useState('');
 
-    const useCollectionRef = collection(db, "agendamento")
+    const useCollectionRef = collection(db, "agendamento");
 
     useEffect(() => {
         const obterAgendamentos = async () => {
-            const dataBD = await getDocs(useCollectionRef)
-            const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-            const filtro = todosAgendamentos.filter(filtrados => filtrados.data === adminData)
-            setAdminAgendamento(filtro)
-            console.log(filtro);
+            const dataBD = await getDocs(useCollectionRef);
+            const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+            const filtro = todosAgendamentos.filter(filtrados => filtrados.data === adminData);
+            setAdminAgendamento(filtro);            
         };
         obterAgendamentos();
     }, [adminData]);

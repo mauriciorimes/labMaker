@@ -3,8 +3,7 @@ export const horasEntrada = [
     8,
     9,
     10,
-    11,
-    12,
+    11,    
     13,
     14,
     15,
@@ -14,15 +13,14 @@ export const horasEntrada = [
     19,
     20,
     21
-]
+];
 
 export const horasSaida = [    
     8,
     9,
     10,
     11,
-    12,
-    13,
+    12,    
     14,
     15,
     16,
@@ -32,4 +30,4 @@ export const horasSaida = [
     20,
     21,
     22
-]
+];

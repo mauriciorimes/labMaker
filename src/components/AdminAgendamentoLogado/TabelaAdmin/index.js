@@ -26,7 +26,6 @@ export default function TabelaAdmin({ dados }) {
                     </th>                    
                 </tr>
             </thead>
-
             {dados.map(agendamentos => (
                 <tbody>
                     <tr>

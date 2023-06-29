@@ -35,7 +35,6 @@ export default function Inicio() {
                         textoDois="uma visita!"
                     />
                 </Link>
-
                 <Link to="equipamentos">
                     <CardOqueFazer
                         primeiroIcone={<PrecisionManufacturingIcon fontSize='large' />}
@@ -44,7 +43,6 @@ export default function Inicio() {
                         textoDois="nossos equipamentos."
                     />
                 </Link>
-
                 <Link to="/galeria-de-fotos">
                     <CardOqueFazer
                         primeiroIcone={<CameraAltIcon fontSize='large' />}
@@ -53,7 +51,6 @@ export default function Inicio() {
                         textoDois="a galeria de fotos!"
                     />
                 </Link>
-
                 <Link to="/praticas-pedagogicas">
                     <CardOqueFazer
                         primeiroIcone={<LocalLibraryIcon fontSize='large' />}
@@ -63,7 +60,7 @@ export default function Inicio() {
                     />
                 </Link>
             </aside>
-
+            
             <section>
                 <Informativos
                     imagem={pessoas}

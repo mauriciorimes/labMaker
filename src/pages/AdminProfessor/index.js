@@ -13,15 +13,15 @@ export default function AdminProfessor() {
         e.preventDefault();
         const USUARIO_PROFESSOR = "professor";
         const SENHA_PROFESSOR = "instituto"
-        const visitante = { usuario, senha }
+        const visitante = { usuario, senha };
 
         if (visitante.usuario === USUARIO_PROFESSOR && visitante.senha === SENHA_PROFESSOR) {
-            setAutenticado(true)
-            alert(`Usuario logado!`)
+            setAutenticado(true);
+            alert(`Usuario logado!`);
 
         } else {
-            alert(`Usuário e/ou senha errados!`)
-            setAutenticado(false)
+            alert(`Usuário e/ou senha errados!`);
+            setAutenticado(false);
         }
     }
 

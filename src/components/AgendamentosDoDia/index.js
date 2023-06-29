@@ -7,18 +7,16 @@ import NenhumAgendamentoDoDia from "components/AgendamentosDoDia/NenhumAgendamen
 
 export default function AgendamentosDoDia() {
     const [agendamentosDoDia, setAgendamentoDoDia] = useState([]);
-    const [dataDoDia, setDataDoDia] = useState('')
+    const [dataDoDia, setDataDoDia] = useState('');
 
-    const useCollectionRef = collection(db, "agendamento")
+    const useCollectionRef = collection(db, "agendamento");
 
     useEffect(() => {
         const obterAgendamentos = async () => {
-            const dataBD = await getDocs(useCollectionRef)
-            const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-            const filtro = todosAgendamentos.filter(filtrados => filtrados.data === dataDoDia)
-            setAgendamentoDoDia(filtro)
-            //console.log(filtro);
-            console.log(agendamentosDoDia.length);
+            const dataBD = await getDocs(useCollectionRef);
+            const todosAgendamentos = dataBD.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+            const filtro = todosAgendamentos.filter(filtrados => filtrados.data === dataDoDia);
+            setAgendamentoDoDia(filtro);            
         };
         obterAgendamentos();
     }, [dataDoDia]);

@@ -58,21 +58,13 @@ const Formulario = () => {
         const horariosUsados = [];
 
         for (let i = 0; i < horaInicialAgendada.length; i++) {
-            for (let j = arrayNumerosInicial[i]; j < arrayNumerosFinal[i]; j++)
+            for (let j = arrayNumerosInicial[i]; j < arrayNumerosFinal[i]; j++) {
                 horariosUsados.push(j);
-        }
-        console.log(horariosUsados);
+            }                
+        }        
 
-        if (horariosUsados.includes(entradaNumber) || horariosUsados.includes(saidaNumber)) {
-            console.log(`Horario usado`);
-            return true;
-        } else {
-            console.log('horario vago');
-            return false;
-        }
+        if (horariosUsados.includes(entradaNumber) || horariosUsados.includes(saidaNumber)) return true;         
     }
-    // 5 e 6 sabado e domingo
-
 
     async function aoSalvar(e) {
         e.preventDefault();
@@ -84,18 +76,15 @@ const Formulario = () => {
         console.log(diaDaSemana.getDay());
 
         if (diaDaSemana.getDay() === 5 || diaDaSemana.getDay() === 6) {
-            alert(`Não é possível agendar nos finais de semana!`)
+            alert(`Não é possível agendar nos finais de semana!`);
         } else {
             if (horaInicialNumber === horaFinalNumber || horaFinalNumber < horaInicialNumber) {
                 alert('Horário final não pode ser igual ou menor que horário inicial');
             } else {
-
                 if (verificaHorario(horaInicial, horaFinal)) {
                     alert(`Horário não disponível, vefique horários vagos na tabela no topo do site`);
 
-                } else { // false 
-                    console.log({ nome, email, telefone, instituicao, data, horaInicial, horaFinal });
-
+                } else {
                     const agend = await addDoc(useCollectionRef, {
                         nome,
                         email,
@@ -104,25 +93,21 @@ const Formulario = () => {
                         data,
                         horaInicial,
                         horaFinal
-                    })
+                    });
 
                     limpaCampos();
                     alert(`Agendamento realizado com sucesso!`);
                     window.scrollTo(0, 0);
                     e.target.reset();
                 }
-
             }
-
         }
-
-
     }
 
     return (
         <section className={styles.formulario}>
             <form onSubmit={aoSalvar}>
-                <h2> Preencha os dados para completar seu agendamento</h2>
+                <h2> Preencha os dados para completar seu agendamento </h2>
 
                 <CampoTexto
                     label="Nome completo"

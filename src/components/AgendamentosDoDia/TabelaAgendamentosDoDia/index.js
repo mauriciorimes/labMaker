@@ -3,7 +3,6 @@ import styles from './TabelaAgendamentosDoDia.module.css';
 export default function TabelaAgendamentosDoDia({ dados }) {
 
     return (
-
         <table className={styles.TabelaAgendamentosDoDia}>
             <thead>
                 <tr>
@@ -12,10 +11,7 @@ export default function TabelaAgendamentosDoDia({ dados }) {
                     </th>
                     <th>
                         Horário
-                    </th>
-                    {/* <th>
-                            Horário final
-                        </th> */}
+                    </th>                    
                 </tr>
 
             </thead>
@@ -24,8 +20,7 @@ export default function TabelaAgendamentosDoDia({ dados }) {
                 <tbody>
                     <tr>
                         <td> {agendamentos.nome} </td>
-                        <td> De {agendamentos.horaInicial}:00 às {agendamentos.horaFinal}:00 </td>
-                        {/* <td> {agendamentos.horaFinal}:00 </td> */}
+                        <td> De {agendamentos.horaInicial}:00 às {agendamentos.horaFinal}:00 </td>                        
                     </tr>
                 </tbody>
             ))}

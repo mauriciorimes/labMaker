@@ -8,13 +8,12 @@ import BotaoUpload from "./BotaoUpload";
 export default function AdminProfessorLogado() {
 
     const [pdf, setPdf] = useState("");
-    const [progress, setProgress] = useState(0);   
-
+    const [progress, setProgress] = useState(0);
 
     const upload = (event) => {
         event.preventDefault();
         const file = event.target[0]?.files[0];
-        if (!file) return
+        if (!file) return;
 
         const storageRef = ref(storage, `pdfs/${file.name}`);
         const uploadTask = uploadBytesResumable(storageRef, file);
@@ -22,8 +21,8 @@ export default function AdminProfessorLogado() {
         uploadTask.on(
             "state_changed",
             snapshot => {
-                const Calcprogress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                setProgress(Calcprogress.toFixed(0))                                
+                const Calcprogress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                setProgress(Calcprogress.toFixed(0));                                
             },
             error => {
                 alert(error);

@@ -3,7 +3,7 @@ import styles from './CampoHorario.module.css';
 export default function CampoHorario({ label, horarios, aoAlterado }) {
 
     const aoEscolhido = (e) => {
-        aoAlterado(e.target.value)
+        aoAlterado(e.target.value);
     }
 
     return(

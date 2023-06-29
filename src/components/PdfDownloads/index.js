@@ -9,28 +9,26 @@ export default function PdfDownloads() {
     const [caminhoPdf, setCaminhoPdf] = useState([]);
 
     useEffect(() => {
-
         const storage = getStorage();
-        const listRef = ref(storage, "gs://lab-maker-agendamento.appspot.com/pdfs")
-        const listaCaminhosPdfs = []
+        const listRef = ref(storage, "gs://lab-maker-agendamento.appspot.com/pdfs");
+        const listaCaminhosPdfs = [];
 
         listAll(listRef)
             .then((res => {
                 res.items.forEach((itemRef => {
-                    listaCaminhosPdfs.push(itemRef.fullPath)
-                    setCaminhoPdf(listaCaminhosPdfs)
+                    listaCaminhosPdfs.push(itemRef.fullPath);
+                    setCaminhoPdf(listaCaminhosPdfs);
                 }))
-            }))
-
-    }, [])
+            }));
+    }, []);
 
     function baixarPdf(url) {
-        window.open(url)
+        window.open(url);
     }
 
     function pegaCaminho(caminho) {
         const caminhoEncontrado = caminho;
-        criaDownload(caminhoEncontrado)
+        criaDownload(caminhoEncontrado);
     }
 
     function criaDownload(caminhoRecebido) {
@@ -38,12 +36,12 @@ export default function PdfDownloads() {
 
         getDownloadURL(ref(storage, caminhoRecebido))
             .then((url) => {
-                const xhr = new XMLHttpRequest()
+                const xhr = new XMLHttpRequest();
                 xhr.responseType = 'blob';
                 xhr.open('GET', url);
-                xhr.send()
-                baixarPdf(url)
-            })
+                xhr.send();
+                baixarPdf(url);
+            });
     }
 
     return (
@@ -55,7 +53,6 @@ export default function PdfDownloads() {
                         <label > {pdf.slice(5).slice(0, -4)} </label>
                     </li>
                 ))}
-
             </ul>
         </section>
     )

@@ -3,7 +3,6 @@ import styles from './AdminAgendamentos.module.css';
 import AdminProfessorVisitante from "components/AdminVisitante";
 import AdminAgendamentoLogado from "components/AdminAgendamentoLogado";
 
-
 export default function AdminAgendamentos() {
 
     const [usuario, setUsuario] = useState("");
@@ -14,15 +13,15 @@ export default function AdminAgendamentos() {
         e.preventDefault();
         const USUARIO_ADMIN = "admin";
         const SENHA_ADMIN = "labmaker"
-        const visitante = { usuario, senha }
+        const visitante = { usuario, senha };
 
         if (visitante.usuario === USUARIO_ADMIN && visitante.senha === SENHA_ADMIN) {
-            setAutenticado(true)
+            setAutenticado(true);
             alert(`Usuario logado!`)
 
         } else {
-            alert(`Usuário e/ou senha errados!`)
-            setAutenticado(false)
+            alert(`Usuário e/ou senha errados!`);
+            setAutenticado(false);
         }
     }
 

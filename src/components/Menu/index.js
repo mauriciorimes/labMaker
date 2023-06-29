@@ -17,32 +17,32 @@ export default function Menu() {
             <section>
                 <MenuLink rota="/">
                     <ul>
-                        <li><HomeIcon /></li>
-                        <li>Início</li>
+                        <li> <HomeIcon /> </li>
+                        <li> Início </li>
                     </ul>
                 </MenuLink>
                 <MenuLink rota="/agendamento">
                     <ul>
-                        <li><CalendarMonthIcon /></li>
-                        <li>Agendar</li>
+                        <li> <CalendarMonthIcon /> </li>
+                        <li> Agendar </li>
                     </ul>
                 </MenuLink>
                 <MenuLink rota="/equipamentos">
                     <ul>
-                        <li><PrecisionManufacturingIcon /></li>
-                        <li>Equipamentos</li>
+                        <li> <PrecisionManufacturingIcon /> </li>
+                        <li> Equipamentos </li>
                     </ul>
                 </MenuLink>
                 <MenuLink rota="/galeria-de-fotos">
                     <ul>
-                        <li><CameraAltIcon /></li>
-                        <li>Galeria de Fotos</li>
+                        <li> <CameraAltIcon /> </li>
+                        <li> Galeria de Fotos </li>
                     </ul>
                 </MenuLink>
                 <MenuLink rota="/praticas-pedagogicas">
                     <ul>
-                        <li><LocalLibraryIcon /></li>
-                        <li>Práticas Pedagógicas</li>
+                        <li> <LocalLibraryIcon /> </li>
+                        <li> Práticas Pedagógicas </li>
                     </ul>
                 </MenuLink>
             </section>

@@ -16,8 +16,8 @@ export default function PraticasPedagogicas() {
     function filtrarTutoriais(tag) {
         const novosFiltros = tutoriais.filter(tutorial => (
             tutorial.tag === tag
-        ))
-        setTutorial(novosFiltros)
+        ));
+        setTutorial(novosFiltros);
     }
 
     return (
