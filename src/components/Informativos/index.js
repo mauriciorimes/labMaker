@@ -1,4 +1,4 @@
-import styles from './Informativos.module.css';
+import styles from "./Informativos.module.css";
 
 export default function Informativos({ imagem, alt, titulo, descricao }) {
     return(

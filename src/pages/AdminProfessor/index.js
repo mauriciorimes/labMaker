@@ -1,5 +1,5 @@
+import styles from "./AdminProfessor.module.css";
 import { useState } from "react";
-import styles from './AdminProfessor.module.css';
 import AdminVisitante from "components/AdminVisitante";
 import AdminProfessorLogado from "components/AdminProfessorLogado";
 

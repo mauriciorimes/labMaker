@@ -1,8 +1,8 @@
+import styles from "./ConferirAgendamento.module.css";
 import { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore/lite';
 import { db } from 'db/agendamento';
 import IdArte from 'components/ConferirAgendamento/IdArte';
-import styles from './ConferirAgendamento.module.css';
 import BotaoPesquisarEmail from 'components/ConferirAgendamento/BotaoPesquisar';
 import SearchIcon from '@mui/icons-material/Search';
 import IdEmailNaoEncontrado from 'components/ConferirAgendamento/IdEmailNaoEncontrado';

@@ -1,4 +1,4 @@
-import styles from './AdminProfessorVisitante.module.css';
+import styles from "./AdminProfessorVisitante.module.css";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LockIcon from '@mui/icons-material/Lock';
 import BotaoLogin from './BotaoLogin';

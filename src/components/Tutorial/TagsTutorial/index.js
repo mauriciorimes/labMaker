@@ -1,4 +1,4 @@
-import styles from './TagsTutorial.module.css'
+import styles from "./TagsTutorial.module.css"
 
 export default function TagsTutorial({ tags, filtrarTutoriais }) {
     return (

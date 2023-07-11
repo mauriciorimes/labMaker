@@ -1,4 +1,4 @@
-import styles from './Menu.module.css';
+import styles from "./Menu.module.css";
 import MenuLink from './MenuLink';
 import HomeIcon from '@mui/icons-material/Home';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';

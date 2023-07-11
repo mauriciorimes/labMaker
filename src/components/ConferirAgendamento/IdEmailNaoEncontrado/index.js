@@ -1,5 +1,5 @@
+import styles from "./IdEmailNaoEncontrado.module.css";
 import emailNotFound from 'image/id/email_not_found.png';
-import styles from './IdEmailNaoEncontrado.module.css';
 
 export default function IdEmailNaoEncontrado() {
     return(

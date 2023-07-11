@@ -1,5 +1,5 @@
+import styles from "./Equipamentos.module.css";
 import ListaDeEquipamentos from 'components/ListaDeEquipamentos';
-import styles from './Equipamentos.module.css';
 import impressora from 'image/equipamentos/3d-printing.png';
 import scanner from 'image/equipamentos/3d-scanner.png';
 import lego from 'image/equipamentos/blocks.png';

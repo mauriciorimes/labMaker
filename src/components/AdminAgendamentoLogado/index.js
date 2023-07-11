@@ -1,11 +1,10 @@
+import styles from "./AdminAgendamentoLogado.module.css";
 import { db } from "db/agendamento";
 import { collection, getDocs } from "firebase/firestore/lite";
 import { useEffect, useState } from "react";
-import styles from './AdminAgendamentoLogado.module.css';
 import TabelaAdmin from "./TabelaAdmin";
 
 export default function AdminAgendamentoLogado() {
-
     const [adminAgendamento, setAdminAgendamento] = useState([]);
     const [adminData, setAdminData] = useState('');
 

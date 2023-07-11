@@ -1,7 +1,6 @@
 import styles from './TabelaAgendamentosDoDia.module.css';
 
 export default function TabelaAgendamentosDoDia({ dados }) {
-
     return (
         <table className={styles.TabelaAgendamentosDoDia}>
             <thead>
@@ -17,7 +16,7 @@ export default function TabelaAgendamentosDoDia({ dados }) {
             </thead>
 
             {dados.map(agendamentos => (
-                <tbody>
+                <tbody key={agendamentos.nome}>
                     <tr>
                         <td> {agendamentos.nome} </td>
                         <td> De {agendamentos.horaInicial}:00 às {agendamentos.horaFinal}:00 </td>                        

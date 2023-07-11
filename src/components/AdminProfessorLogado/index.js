@@ -1,12 +1,10 @@
+import styles from "./AdminProfessorLogado.module.css";
 import { useState } from "react";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "db/agendamento";
-import styles from './AdminProfessorLogado.module.css';
 import BotaoUpload from "./BotaoUpload";
 
-
 export default function AdminProfessorLogado() {
-
     const [pdf, setPdf] = useState("");
     const [progress, setProgress] = useState(0);
 

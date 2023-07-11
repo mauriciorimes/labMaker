@@ -1,5 +1,5 @@
+import styles from "./Inicio.module.css";
 import CardOqueFazer from 'components/CardOqueFazer';
-import styles from './Inicio.module.css';
 import Informativos from 'components/Informativos';
 import pessoas from 'image/inicio/pessoas.png';
 import robo from 'image/inicio/robo.png';

@@ -1,8 +1,8 @@
+import styles from "./AgendamentosDoDia.module.css";
 import TabelaAgendamentosDoDia from "components/AgendamentosDoDia/TabelaAgendamentosDoDia";
 import { db } from "db/agendamento";
 import { collection, getDocs } from "firebase/firestore/lite";
 import { useEffect, useState } from "react";
-import styles from './AgendamentosDoDia.module.css';
 import NenhumAgendamentoDoDia from "components/AgendamentosDoDia/NenhumAgendamentoDoDia";
 
 export default function AgendamentosDoDia() {

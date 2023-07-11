@@ -1,4 +1,4 @@
-import styles from './BotaoUpload.module.css';
+import styles from "./BotaoUpload.module.css";
 
 export default function BotaoUpload({ children }) {
     return(

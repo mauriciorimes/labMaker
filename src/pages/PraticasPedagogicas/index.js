@@ -1,4 +1,4 @@
-import styles from './PraticasPedagogicas.module.css';
+import styles from "./PraticasPedagogicas.module.css";
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import TouchAppIcon from '@mui/icons-material/TouchApp';

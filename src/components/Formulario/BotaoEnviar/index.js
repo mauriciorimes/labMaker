@@ -1,4 +1,4 @@
-import styles from './BotaoEnviar.module.css';
+import styles from "./BotaoEnviar.module.css";
 
 export default function BotaoEnviar({ children }) {
     return(

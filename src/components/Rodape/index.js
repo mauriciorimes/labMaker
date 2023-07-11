@@ -1,4 +1,4 @@
-import styles from './Rodape.module.css';
+import styles from "./Rodape.module.css";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ApartmentIcon from '@mui/icons-material/Apartment';

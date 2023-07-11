@@ -1,6 +1,6 @@
+import styles from "./PdfDownloads.module.css";
 import { getDownloadURL, getStorage, listAll, ref } from "firebase/storage";
 import { useEffect, useState } from "react";
-import styles from './PdfDownloads.module.css';
 import 'firebase/storage';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
@@ -48,7 +48,7 @@ export default function PdfDownloads() {
         <section className={styles.Conhecimento}>
             <ul>
                 {caminhoPdf.map(pdf => (
-                    <li onClick={() => pegaCaminho(pdf)}> 
+                    <li onClick={() => pegaCaminho(pdf)} key={pdf}> 
                         <FileDownloadIcon fontSize="large" className={styles.Icone}/>
                         <label > {pdf.slice(5).slice(0, -4)} </label>
                     </li>

@@ -1,4 +1,4 @@
-import styles from './CardEquipamento.module.css';
+import styles from "./CardEquipamento.module.css";
 
 export default function ListaDeEquipamentos({ label, quantidade, imagem, descricao }) { 
     return (

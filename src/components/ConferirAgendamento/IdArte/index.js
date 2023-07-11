@@ -1,8 +1,7 @@
-import styles from './IdArte.module.css';
+import styles from "./IdArte.module.css";
 import people from '../../../image/id/people.png';
 
 export default function IdArte({ usuarioEncontrado, nome }) {
-
     const nomeRecebido = [...new Set(nome.map(n => n.nome))];
 
     function reverseString(str) {
@@ -13,14 +12,14 @@ export default function IdArte({ usuarioEncontrado, nome }) {
         <div>
             {nomeRecebido.length > 0 ? <section className={styles.IdArte}>
                 {nome.map(nome => (
-                    <div>
+                    <div key={nome}>
                         <img src={people} alt='people' />
                         <h2> {nome} </h2>
                         <h3> VISITANTE </h3>
                     </div>
                 ))}
                 {usuarioEncontrado.map(usuario => (
-                    <div>
+                    <div key={usuario.nome}>
                         <ul>
                             <li> Data: {reverseString(usuario.data)} </li>
                             <li> Horário: de {usuario.horaInicial}:00 às {usuario.horaFinal}:00 </li>
@@ -29,29 +28,5 @@ export default function IdArte({ usuarioEncontrado, nome }) {
                 ))}
             </section> : ''}
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     )
 }

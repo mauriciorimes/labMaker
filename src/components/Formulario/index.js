@@ -1,7 +1,7 @@
+import styles from "./Formulario.module.css";
 import { useEffect, useState } from 'react';
 import CampoHorario from './CampoHorario';
 import CampoTexto from './CampoTexto';
-import styles from './Formulario.module.css';
 import { maskPhone } from '../Formulario/utils/Mascaras.js';
 import { horasEntrada, horasSaida } from '../Formulario/utils/Horarios.js';
 import { collection, getDocs, addDoc } from 'firebase/firestore/lite';
@@ -9,8 +9,7 @@ import { db } from 'db/agendamento';
 import { dataCortada } from './utils/Data';
 import BotaoEnviar from './BotaoEnviar';
 
-const Formulario = () => {
-
+export default function Formulario() {
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');
@@ -133,7 +132,7 @@ const Formulario = () => {
                     label="Telefone"
                     type="tel"
                     placeholder="Digite seu telefone"
-                    required
+                    required                    
                     minlength="14"
                     value={telefone}
                     onChange={(e) => setTelefone(maskPhone(e.target.value))}
@@ -175,6 +174,3 @@ const Formulario = () => {
         </section>
     )
 }
-
-export default Formulario;
-

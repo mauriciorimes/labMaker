@@ -1,4 +1,4 @@
-import styles from './FiltroTags.module.css';
+import styles from "./FiltroTags.module.css";
 import fotos from './fotos.json';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 

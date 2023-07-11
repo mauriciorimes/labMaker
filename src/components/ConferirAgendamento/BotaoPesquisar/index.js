@@ -1,4 +1,4 @@
-import styles from './BotaoPesquisar.module.css';
+import styles from "./BotaoPesquisar.module.css";
 
 export default function BotaoPesquisar({ children, funcao }) {
     return(

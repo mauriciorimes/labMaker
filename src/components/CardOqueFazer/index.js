@@ -1,4 +1,4 @@
-import styles from './CardOqueFazer.module.css';
+import styles from "./CardOqueFazer.module.css";
 
 export default function CardOqueFazer({ primeiroIcone, segundoIcone, textoUm, textoDois }) {
     return(

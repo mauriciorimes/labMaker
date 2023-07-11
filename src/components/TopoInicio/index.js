@@ -1,4 +1,4 @@
-import styles from './TopoInicio.module.css';
+import styles from "./TopoInicio.module.css";
 
 export default function TopoInicio({ titulo, subtitulo, explicacao }) {
     return (

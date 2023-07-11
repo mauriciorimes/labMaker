@@ -1,4 +1,4 @@
-import styles from './BotaoLogin.module.css';
+import styles from "./BotaoLogin.module.css";
 
 export default function BotaoLogin({ children }) {
     return(

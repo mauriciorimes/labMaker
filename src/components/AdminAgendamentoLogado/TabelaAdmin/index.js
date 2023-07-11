@@ -1,7 +1,6 @@
 import styles from './TabelaAdmin.module.css';
 
 export default function TabelaAdmin({ dados }) {
-
     return (
         <table className={styles.TabelaAdmin}>
             <thead>
@@ -27,7 +26,7 @@ export default function TabelaAdmin({ dados }) {
                 </tr>
             </thead>
             {dados.map(agendamentos => (
-                <tbody>
+                <tbody key={agendamentos.nome}>
                     <tr>
                         <td> {agendamentos.nome} </td>
                         <td> {agendamentos.email} </td>

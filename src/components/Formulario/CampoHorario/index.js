@@ -1,7 +1,6 @@
-import styles from './CampoHorario.module.css';
+import styles from "./CampoHorario.module.css";
 
 export default function CampoHorario({ label, horarios, aoAlterado }) {
-
     const aoEscolhido = (e) => {
         aoAlterado(e.target.value);
     }

@@ -1,4 +1,4 @@
-import styles from './GaleriaDeFotos.module.css';
+import styles from "./GaleriaDeFotos.module.css";
 import fotos from '../../components/Fotos/FiltroTags/fotos.json';
 import { useState } from 'react';
 import NearMeIcon from '@mui/icons-material/NearMe';
@@ -21,7 +21,7 @@ export default function GaleriaDeFotos() {
             <ul>
                 <li>
                     <NearMeIcon fontSize='large' className={styles.Icone}/>
-                    <h2> Navega pela Galeria </h2>
+                    <h2> Navegue pela Galeria </h2>
                 </li>
             </ul>
             <nav>

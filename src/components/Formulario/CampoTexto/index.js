@@ -1,7 +1,6 @@
-import styles from './CampoTexto.module.css';
+import styles from "./CampoTexto.module.css";
 
-function CampoTexto({ label, placeholder, type, obrigatorio, minlength, valor, aoAlterado, min })  {     
-    
+export default function CampoTexto({ label, placeholder, type, obrigatorio, minlength, valor, aoAlterado, min })  {    
     const aoDigitado = (e) => {
         aoAlterado(e.target.value);
     }    
@@ -22,5 +21,3 @@ function CampoTexto({ label, placeholder, type, obrigatorio, minlength, valor, a
         </div>
     )
 }
-
-export default CampoTexto

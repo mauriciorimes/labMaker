@@ -1,4 +1,4 @@
-import styles from './Tutorial.module.css';
+import styles from "./Tutorial.module.css";
 
 export default function Tutorial({ itens }) {
     return (
