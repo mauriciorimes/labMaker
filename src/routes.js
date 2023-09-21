@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import Menu from "./components/Menu";
 import Agendamento from "./pages/Agendamento";
 import Equipamentos from "./pages/Equipamentos";
@@ -10,7 +9,7 @@ import AdminAgendamentos from "pages/AdminAgendamento";
 import AdminPraticasPedagogicas from "pages/AdminProfessor";
 import Rodape from "components/Rodape";
 
-function AppRoutes() {
+function Rotas() {
   return (
     <BrowserRouter>
       <Menu />
@@ -28,4 +27,4 @@ function AppRoutes() {
   );
 }
 
-export default AppRoutes;
+export default Rotas;
